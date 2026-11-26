@@ -1,0 +1,168 @@
+<section class="page-hero page-hero--ruled">
+  <div class="wrap">
+    <nav aria-label="Хлебные крошки">
+      <ol class="breadcrumbs">
+        <li><a href="index.html">Главная</a></li>
+        <li><span aria-current="page">Цены и калькулятор</span></li>
+      </ol>
+    </nav>
+    <div class="page-hero__grid">
+      <div>
+        <p class="eyebrow"><span class="eyebrow__num">04</span><span class="eyebrow__sep"></span>Цены</p>
+        <h1 class="page-hero__title">Сколько стоит смена</h1>
+        <p class="lead page-hero__lead">Ставки за час, смена целиком и калькулятор, который считает по вашим вводным. Никаких «цена по запросу» — ориентиры открыты.</p>
+      </div>
+      <div class="page-hero__aside">
+        <div class="fact-list">
+          <div class="fact-list__item"><span class="fact-list__num">от 330 ₽</span><span class="fact-list__label">час работы</span></div>
+          <div class="fact-list__item"><span class="fact-list__num">от 4 ч</span><span class="fact-list__label">минимальный заказ</span></div>
+          <div class="fact-list__item"><span class="fact-list__num">по акту</span><span class="fact-list__label">оплата за фактические смены</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--flush-top" id="calc">
+  <div class="wrap">
+    <div class="calc calc--full" data-calc>
+      <div class="calc__form">
+        <h2 class="calc__title">Калькулятор смены</h2>
+        <p class="calc__sub">Укажите профессию, количество людей и график — покажем ориентир и структуру цены.</p>
+        <div class="calc__grid">
+          <label class="field">
+            <span class="field__label">Кто нужен</span>
+            <select class="field__input" name="profession">
+{{PROFESSION_OPTIONS}}
+            </select>
+          </label>
+          <div class="calc__grid calc__grid--3">
+            <label class="field">
+              <span class="field__label">Человек</span>
+              <input class="field__input" type="number" name="people" value="5" min="1" max="500" inputmode="numeric">
+            </label>
+            <label class="field">
+              <span class="field__label">Часов в смене</span>
+              <select class="field__input" name="hours">
+                <option value="4">4</option>
+                <option value="8" selected>8</option>
+                <option value="12">12</option>
+              </select>
+            </label>
+            <label class="field">
+              <span class="field__label">Смен</span>
+              <input class="field__input" type="number" name="shifts" value="1" min="1" max="31" inputmode="numeric">
+            </label>
+          </div>
+          <label class="field">
+            <span class="field__label">Формат работы</span>
+            <select class="field__input" name="mode">
+              <option value="outstaffing" data-factor="1">Аутсорсинг — работаем под ключ</option>
+              <option value="staff" data-factor="1.12">Аутстаффинг — люди в вашем процессе</option>
+            </select>
+          </label>
+          <p class="calc__hint">Расчёт включает оформление, налоги и взносы, работу менеджера и резерв на замену. Спецодежда и СИЗ — по договорённости. Итоговая смета фиксируется в договоре.</p>
+        </div>
+      </div>
+      <div class="calc__result">
+        <div>
+          <p class="calc__eyebrow">Ориентировочная стоимость</p>
+          <p class="calc__total" data-calc-total>от 16 000 ₽</p>
+          <div class="calc__breakdown">
+            <div class="calc__line"><span>Смен</span><b data-calc-shifts>1</b></div>
+            <div class="calc__line"><span>Человеко-часов</span><b data-calc-hours>40 чел.-ч</b></div>
+            <div class="calc__line"><span>Смена целиком</span><b data-calc-shift>от 16 000 ₽</b></div>
+            <div class="calc__line"><span>Ставка на человека</span><b data-calc-person>400 ₽/час</b></div>
+          </div>
+        </div>
+        <div>
+          <button class="btn btn--copper btn--wide" type="button" data-calc-order>Отправить расчёт</button>
+          <p class="calc__note" style="margin-top: 14px">Менеджер перезвонит, уточнит объект и пришлёт смету в течение рабочего дня.</p>
+          <p class="calc__note" style="margin-top: 10px">Ставки — ориентир для Калининграда и области на 2026 год и не являются публичной офертой.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <div class="sec-head__main">
+        <p class="eyebrow"><span class="eyebrow__num">05</span><span class="eyebrow__sep"></span>Прайс</p>
+        <h2 class="sec-head__title">Ставки по профессиям</h2>
+      </div>
+      <div class="sec-head__aside">
+        <p>Ставка за час и смена целиком. Для аутстаффинга добавляется кадровое администрирование — обычно 8–12%.</p>
+      </div>
+    </div>
+    <div data-reveal>
+{{RATES_TABLE}}
+    </div>
+    <p class="table-note">Ставки указаны как ориентир и зависят от объекта, графика, ночных смен и требований к допускам. Точная цена — в смете и договоре.</p>
+  </div>
+</section>
+
+<section class="section section--paper2">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <div class="sec-head__main">
+        <p class="eyebrow"><span class="eyebrow__num">06</span><span class="eyebrow__sep"></span>Что влияет на цену</p>
+        <h2 class="sec-head__title">Четыре фактора, которые меняют ставку</h2>
+      </div>
+    </div>
+    <div class="card-grid card-grid--4">
+      <article class="mini-card" data-reveal><p class="mini-card__num">01</p><h3>График</h3><p>Ночные и праздничные смены дороже. Смена 12 часов обычно выгоднее двух по 6.</p></article>
+      <article class="mini-card" data-reveal style="--d:60ms"><p class="mini-card__num">02</p><h3>Требования</h3><p>Допуски, удостоверения, медкнижки и опыт — это время на проверку и подбор.</p></article>
+      <article class="mini-card" data-reveal style="--d:120ms"><p class="mini-card__num">03</p><h3>Срочность</h3><p>Смена «на завтра» требует резерва. Если люди есть — успеваем без наценки.</p></article>
+      <article class="mini-card" data-reveal style="--d:180ms"><p class="mini-card__num">04</p><h3>Объём и срок</h3><p>На длинных проектах ставка ниже, чем на разовых выходах: меньше затрат на запуск.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap split">
+    <div class="split__aside" data-reveal>
+      <p class="eyebrow"><span class="eyebrow__num">07</span><span class="eyebrow__sep"></span>Оплата</p>
+      <h2 class="split__title">Как платить и какие документы получите</h2>
+      <p class="split__note">Работаем по договору, безналичный расчёт. Отсрочка и график платежей обсуждаются и фиксируются.</p>
+    </div>
+    <div class="value-list" data-reveal>
+      <div class="value-item"><span class="value-item__num">01</span><div><h3 class="value-item__title">Договор</h3><p class="value-item__text">Объём, ставка, сроки, порядок замен и ответственность сторон. Подписываем до выхода людей.</p></div></div>
+      <div class="value-item"><span class="value-item__num">02</span><div><h3 class="value-item__title">Табель</h3><p class="value-item__text">Фиксируем фактические смены. Вы видите, за что платите, до выставления счёта.</p></div></div>
+      <div class="value-item"><span class="value-item__num">03</span><div><h3 class="value-item__title">Акт и счёт</h3><p class="value-item__text">Закрывающие документы по графику. Налоги и взносы уже внутри ставки.</p></div></div>
+      <div class="value-item"><span class="value-item__num">04</span><div><h3 class="value-item__title">Отсрочка</h3><p class="value-item__text">Обсуждаем индивидуально: от оплаты по факту до отсрочки на согласованный срок.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tight">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <div class="sec-head__main">
+        <p class="eyebrow"><span class="eyebrow__num">08</span><span class="eyebrow__sep"></span>Вопросы</p>
+        <h2 class="sec-head__title">О цене и оплате</h2>
+      </div>
+    </div>
+    <div class="faq-list">
+      <details class="acc"><summary class="acc__btn"><span>Почему ставка «от», а не фиксированная?</span><span class="acc__icon" aria-hidden="true"></span></summary><div class="acc__panel"><p>Потому что на цену влияют объект, график и требования. Мы не прячем диапазон: после брифа называем точную ставку и фиксируем её в договоре.</p></div></details>
+      <details class="acc"><summary class="acc__btn"><span>Можно ли получить смету без встречи?</span><span class="acc__icon" aria-hidden="true"></span></summary><div class="acc__panel"><p>Да. Достаточно телефона и описания задачи: профессия, количество людей, график, адрес объекта. Смету пришлём в течение рабочего дня.</p></div></details>
+      <details class="acc"><summary class="acc__btn"><span>Что входит в ставку?</span><span class="acc__icon" aria-hidden="true"></span></summary><div class="acc__panel"><p>Оплата труда, НДФЛ и страховые взносы, оформление, работа менеджера и резерв на замену. Спецодежда и СИЗ — по договорённости.</p></div></details>
+      <details class="acc"><summary class="acc__btn"><span>Работаете ли с НДС?</span><span class="acc__icon" aria-hidden="true"></span></summary><div class="acc__panel"><p>Уточним при подготовке сметы: условия зависят от вашей системы налогообложения и требований бухгалтерии. Все цифры фиксируем в договоре.</p></div></details>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap cta-band__in">
+    <div>
+      <h2 class="cta-band__title">Смета на смену — в течение дня</h2>
+      <p class="cta-band__text">Оставьте расчёт или позвоните. Уточним детали и пришлём цифры, по которым можно планировать бюджет.</p>
+    </div>
+    <div class="cta-band__actions">
+      <a class="cta-band__phone" href="tel:+74012000000">+7 (4012) 00-00-00</a>
+      <button class="btn btn--copper" type="button" data-open-order>Оставить заявку</button>
+      <a class="btn btn--outline-light" href="personnel.html">Персонал и ставки</a>
+    </div>
+  </div>
+</section>

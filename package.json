@@ -1,0 +1,13 @@
+{
+  "name": "rusresurs-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Сайт кадрового агентства «РусРесурс» — аутсорсинг и аутстаффинг рабочего персонала",
+  "scripts": {
+    "build": "node build.mjs",
+    "serve": "node scripts/serve.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

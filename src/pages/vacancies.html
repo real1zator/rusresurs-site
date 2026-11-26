@@ -1,0 +1,130 @@
+<section class="page-hero page-hero--ruled">
+  <div class="wrap">
+    <nav aria-label="Хлебные крошки">
+      <ol class="breadcrumbs">
+        <li><a href="index.html">Главная</a></li>
+        <li><span aria-current="page">Вакансии</span></li>
+      </ol>
+    </nav>
+    <div class="page-hero__grid">
+      <div>
+        <p class="eyebrow"><span class="eyebrow__num">06</span><span class="eyebrow__sep"></span>Вакансии</p>
+        <h1 class="page-hero__title">Работа с официальным оформлением</h1>
+        <p class="lead page-hero__lead">Смены на складах, производствах, стройках и в агро. Оформляем по ТК, платим два раза в месяц, ставим на объект рядом с домом, если он есть.</p>
+        <div class="page-hero__actions">
+          <a class="btn btn--copper" href="#vacancies">Смотреть вакансии</a>
+          <a class="btn btn--ghost" href="tel:+74012000000">+7 (4012) 00-00-00</a>
+        </div>
+      </div>
+      <div class="page-hero__aside">
+        <div class="fact-list">
+          <div class="fact-list__item"><span class="fact-list__num">2 раза</span><span class="fact-list__label">в месяц выплаты</span></div>
+          <div class="fact-list__item"><span class="fact-list__num">ТК РФ</span><span class="fact-list__label">официальное оформление</span></div>
+          <div class="fact-list__item"><span class="fact-list__num">10</span><span class="fact-list__label">открытых вакансий</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tight">
+  <div class="wrap">
+    <div class="card-grid card-grid--4">
+      <article class="mini-card" data-reveal><p class="mini-card__num">01</p><h3>Без опыта</h3><p>Грузчиком, уборщиком или комплектовщиком можно начать с нуля — инструктаж проводим на месте.</p></article>
+      <article class="mini-card" data-reveal style="--d:60ms"><p class="mini-card__num">02</p><h3>Работа рядом</h3><p>Подбираем объект в вашем районе или с удобной доставкой от города.</p></article>
+      <article class="mini-card" data-reveal style="--d:120ms"><p class="mini-card__num">03</p><h3>Выплаты вовремя</h3><p>Два раза в месяц на карту. Без «зарплаты в конверте» и задержек.</p></article>
+      <article class="mini-card" data-reveal style="--d:180ms"><p class="mini-card__num">04</p><h3>Спецодежда</h3><p>Выдаём рабочую одежду и инвентарь под задачу объекта.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section section--paper2" id="vacancies">
+  <div class="wrap" data-filter-scope>
+    <div class="sec-head" data-reveal>
+      <div class="sec-head__main">
+        <p class="eyebrow"><span class="eyebrow__num">07</span><span class="eyebrow__sep"></span>Вакансии</p>
+        <h2 class="sec-head__title">Открытые смены и постоянные места</h2>
+      </div>
+      <div class="sec-head__aside">
+        <p>Оплата указана за смену. Точный график и объект уточняем на собеседовании — подберём под ваш район.</p>
+      </div>
+    </div>
+
+    <div class="filter-bar">
+{{VACANCY_FILTERS}}
+      <label class="search">
+        <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="5" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M11 11l4 4" stroke="currentColor" stroke-width="1.4"/></svg>
+        <span class="visually-hidden">Поиск по вакансиям</span>
+        <input class="field__input" type="search" placeholder="Профессия, район или график" data-search-input>
+      </label>
+    </div>
+
+    <div class="vac-list">
+{{VACANCIES}}
+    </div>
+    <p class="empty-state" data-empty>Подходящих вакансий не нашлось. Оставьте заявку — позвоним, когда появится объект рядом с вами.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap split">
+    <div class="split__aside" data-reveal>
+      <p class="eyebrow"><span class="eyebrow__num">08</span><span class="eyebrow__sep"></span>Как устроиться</p>
+      <h2 class="split__title">Четыре шага до первой смены</h2>
+      <p class="split__note">Обычно весь путь занимает 2–3 дня, если документы в порядке.</p>
+    </div>
+    <div class="timeline" data-reveal>
+      <div class="timeline__item">
+        <p class="timeline__year">01</p>
+        <p class="timeline__title">Заявка</p>
+        <p class="timeline__text">Оставьте отклик на вакансию или позвоните. Уточним опыт, район и удобный график.</p>
+      </div>
+      <div class="timeline__item">
+        <p class="timeline__year">02</p>
+        <p class="timeline__title">Собеседование</p>
+        <p class="timeline__text">Короткая встреча в офисе или по телефону. Расскажем про объект, ставку и условия.</p>
+      </div>
+      <div class="timeline__item">
+        <p class="timeline__year">03</p>
+        <p class="timeline__title">Оформление</p>
+        <p class="timeline__text">Паспорт, СНИЛС, ИНН, трудовая. Для пищепрома — медкнижка. Подскажем, что оформить.</p>
+      </div>
+      <div class="timeline__item">
+        <p class="timeline__year">04</p>
+        <p class="timeline__title">Первый выход</p>
+        <p class="timeline__text">Инструктаж, спецодежда, знакомство с объектом и наставник на первую смену.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--paper2">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <div class="sec-head__main">
+        <p class="eyebrow"><span class="eyebrow__num">09</span><span class="eyebrow__sep"></span>Вопросы соискателей</p>
+        <h2 class="sec-head__title">Что спрашивают чаще всего</h2>
+      </div>
+    </div>
+    <div class="faq-list">
+      <details class="acc"><summary class="acc__btn"><span>Нужен ли опыт?</span><span class="acc__icon" aria-hidden="true"></span></summary><div class="acc__panel"><p>Для грузчика, уборщика и комплектовщика опыт не обязателен: проводим инструктаж и ставим наставника. Для сварщика, стропальщика и водителя погрузчика нужны подтверждённые допуски.</p></div></details>
+      <details class="acc"><summary class="acc__btn"><span>Как быстро начну работать?</span><span class="acc__icon" aria-hidden="true"></span></summary><div class="acc__panel"><p>Если документы в порядке и объект рядом — первая смена возможна в течение 2–3 дней. Для пищевого производства срок зависит от готовности медкнижки.</p></div></details>
+      <details class="acc"><summary class="acc__btn"><span>Можно ли работать на нескольких объектах?</span><span class="acc__icon" aria-hidden="true"></span></summary><div class="acc__panel"><p>Да, есть смены с гибким графиком. Скажите, сколько дней в неделю готовы работать, — подберём объекты и составим расписание.</p></div></details>
+      <details class="acc"><summary class="acc__btn"><span>Что с проживанием и доставкой?</span><span class="acc__icon" aria-hidden="true"></span></summary><div class="acc__panel"><p>На удалённых объектах и сезонных проектах организуем доставку или проживание. Условия обсуждаем на собеседовании.</p></div></details>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap cta-band__in">
+    <div>
+      <h2 class="cta-band__title">Не нашли свою вакансию?</h2>
+      <p class="cta-band__text">Оставьте отклик — подберём объект под ваш район и график. Или позвоните: подскажем, какие смены открыты сейчас.</p>
+    </div>
+    <div class="cta-band__actions">
+      <a class="cta-band__phone" href="tel:+74012000000">+7 (4012) 00-00-00</a>
+      <button class="btn btn--copper" type="button" data-open-order data-title="Хочу работать в «РусРесурсе»">Оставить отклик</button>
+      <a class="btn btn--outline-light" href="contacts.html">Приехать в офис</a>
+    </div>
+  </div>
+</section>

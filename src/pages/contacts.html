@@ -1,0 +1,196 @@
+<section class="page-hero page-hero--ruled">
+  <div class="wrap">
+    <nav aria-label="Хлебные крошки">
+      <ol class="breadcrumbs">
+        <li><a href="index.html">Главная</a></li>
+        <li><span aria-current="page">Контакты</span></li>
+      </ol>
+    </nav>
+    <div class="page-hero__grid">
+      <div>
+        <p class="eyebrow"><span class="eyebrow__num">10</span><span class="eyebrow__sep"></span>Контакты</p>
+        <h1 class="page-hero__title">Офис в центре Калининграда</h1>
+        <p class="lead page-hero__lead">Московский проспект, 44, БЦ «Балтийский», 7 этаж, офис 702. Позвоните или приезжайте — покажем документы и посчитаем смену.</p>
+        <div class="page-hero__actions">
+          <a class="btn btn--copper" href="tel:+74012000000">Позвонить</a>
+          <a class="btn btn--ghost" href="https://wa.me/74012000000" target="_blank" rel="noopener">Написать в WhatsApp</a>
+        </div>
+      </div>
+      <div class="page-hero__aside">
+        <div class="fact-list">
+          <div class="fact-list__item"><span class="fact-list__num">Пн–Пт</span><span class="fact-list__label">9:00–18:00, офис</span></div>
+          <div class="fact-list__item"><span class="fact-list__num">24/7</span><span class="fact-list__label">смены на объектах</span></div>
+          <div class="fact-list__item"><span class="fact-list__num">15 мин</span><span class="fact-list__label">средний ответ на заявку</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--flush-top">
+  <div class="wrap contact-grid">
+    <div>
+      <dl class="contact-list">
+        <div class="contact-row">
+          <dt>Телефон</dt>
+          <dd><a class="contact-row__big" href="tel:+74012000000">+7 (4012) 00-00-00</a></dd>
+        </div>
+        <div class="contact-row">
+          <dt>Email</dt>
+          <dd><a href="mailto:info@rusresurs39.ru">info@rusresurs39.ru</a></dd>
+        </div>
+        <div class="contact-row">
+          <dt>Офис</dt>
+          <dd>г. Калининград, Московский проспект, 44,<br>БЦ «Балтийский», 7 этаж, офис 702</dd>
+        </div>
+        <div class="contact-row">
+          <dt>Часы работы</dt>
+          <dd>Пн–Пт, 9:00–18:00<br><span style="color: var(--muted); font-size: 13px">Заявки на сайте — круглосуточно</span></dd>
+        </div>
+        <div class="contact-row">
+          <dt>Мессенджеры</dt>
+          <dd>
+            <a href="https://wa.me/74012000000" target="_blank" rel="noopener">WhatsApp</a> ·
+            <a href="https://t.me/rusresurs39" target="_blank" rel="noopener">Telegram</a>
+          </dd>
+        </div>
+        <div class="contact-row">
+          <dt>Реквизиты</dt>
+          <dd>ООО «РусРесурс»<br><span style="color: var(--muted); font-size: 13px">ИНН и ОГРН — предоставим по запросу</span></dd>
+        </div>
+      </dl>
+      <p class="note" style="margin-top: 22px">Лицензированное кадровое агентство. Копии лицензии, договора и карточку предприятия предоставляем по запросу или в офисе.</p>
+    </div>
+
+    <div class="form-panel" id="contact-form">
+      <h2 class="form-panel__title">Оставьте заявку</h2>
+      <p class="form-panel__lead">Перезвоним в рабочее время, уточним задачу и предложим людей. Если смена нужна срочно — позвоните.</p>
+      <form class="form" data-form="order" novalidate>
+        <div class="form__row form__row--2">
+          <label class="field">
+            <span class="field__label">Ваше имя</span>
+            <input class="field__input" type="text" name="name" autocomplete="name" placeholder="Как к вам обращаться" required>
+            <span class="field__error">Напишите имя</span>
+          </label>
+          <label class="field">
+            <span class="field__label">Телефон</span>
+            <input class="field__input" type="tel" name="phone" autocomplete="tel" placeholder="+7 (___) ___-__-__" required>
+            <span class="field__error">Введите телефон полностью</span>
+          </label>
+        </div>
+        <label class="field">
+          <span class="field__label">Компания или «частное лицо»</span>
+          <input class="field__input" type="text" name="company" autocomplete="organization" placeholder="Название компании">
+        </label>
+        <div class="form__row form__row--2">
+          <label class="field">
+            <span class="field__label">Кто нужен</span>
+            <select class="field__input" name="profession">
+              <option value="">Выберите профессию</option>
+{{PROFESSION_OPTIONS}}
+              <option value="Другое">Другое</option>
+            </select>
+          </label>
+          <label class="field">
+            <span class="field__label">Сколько человек</span>
+            <input class="field__input" type="number" name="people" min="1" max="500" inputmode="numeric" placeholder="Например, 5">
+          </label>
+        </div>
+        <label class="field">
+          <span class="field__label">Комментарий</span>
+          <textarea class="field__input" name="comment" rows="3" placeholder="Объект, график, дата старта"></textarea>
+        </label>
+        <label class="check">
+          <input type="checkbox" name="consent" required>
+          <span>Согласен на обработку персональных данных и принимаю <a href="privacy.html" target="_blank" rel="noopener">политику конфиденциальности</a></span>
+        </label>
+        <div class="form__actions">
+          <button class="btn btn--copper" type="submit">Отправить заявку</button>
+          <a class="form__phone" href="tel:+74012000000">+7 (4012) 00-00-00</a>
+        </div>
+      </form>
+      <div class="form-success" data-success hidden role="status" aria-live="polite">
+        <p class="form-success__mark">Заявка принята</p>
+        <p class="form-success__text" data-success-text>Перезвоним в рабочее время и уточним детали.</p>
+        <div class="form-success__actions">
+          <a class="btn btn--copper" href="tel:+74012000000">Позвонить сейчас</a>
+          <a class="btn btn--ghost" href="https://wa.me/74012000000" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tight">
+  <div class="wrap">
+    <div class="map">
+      <span class="visually-hidden">Схема расположения офиса: Калининград, Московский проспект, 44, БЦ «Балтийский»</span>
+      <svg viewBox="0 0 1200 600" aria-hidden="true" preserveAspectRatio="xMidYMid meet">
+        <rect width="1200" height="600" fill="#E9E3D5"/>
+        <g stroke="#D4CCBB" stroke-width="18" fill="none">
+          <path d="M-40 120 L1240 80"/>
+          <path d="M-40 260 L1240 220"/>
+          <path d="M-40 420 L1240 390"/>
+          <path d="M-20 540 L1220 520"/>
+          <path d="M140 -20 L200 640"/>
+          <path d="M400 -20 L450 640"/>
+          <path d="M700 -20 L740 640"/>
+          <path d="M980 -20 L1010 640"/>
+        </g>
+        <g stroke="#CFC6B4" stroke-width="6" fill="none">
+          <path d="M-40 190 L1240 160"/>
+          <path d="M-40 330 L1240 300"/>
+          <path d="M-40 480 L1240 450"/>
+          <path d="M280 -20 L320 640"/>
+          <path d="M560 -20 L590 640"/>
+          <path d="M860 -20 L880 640"/>
+        </g>
+        <path d="M690 640 C 740 520 760 470 700 390 C 650 320 660 260 720 200 L760 200 C 700 270 700 330 750 400 C 810 490 800 560 760 640 Z" fill="#C9D2CE" opacity="0.85"/>
+        <path d="M-40 120 L1240 80" stroke="#C8BFAE" stroke-width="2"/>
+        <text x="430" y="250" font-family="Golos Text, sans-serif" font-size="20" fill="#8A8677" transform="rotate(-1.5 430 250)">Московский проспект</text>
+        <text x="120" y="510" font-family="Golos Text, sans-serif" font-size="17" fill="#8A8677" transform="rotate(-1 120 510)">ул. Гагарина</text>
+        <text x="790" y="580" font-family="Golos Text, sans-serif" font-size="17" fill="#8A8677">р. Преголя</text>
+      </svg>
+      <span class="map__pin" aria-hidden="true"></span>
+      <div class="map__card">
+        <div><strong>БЦ «Балтийский»</strong>Московский проспект, 44, 7 этаж, офис 702</div>
+        <a class="link-arrow" href="https://yandex.ru/maps/?text=%D0%9A%D0%B0%D0%BB%D0%B8%D0%BD%D0%B8%D0%BD%D0%B3%D1%80%D0%B0%D0%B4%2C%20%D0%9C%D0%BE%D1%81%D0%BA%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9%20%D0%BF%D1%80%D0%BE%D1%81%D0%BF%D0%B5%D0%BA%D1%82%2C%2044" target="_blank" rel="noopener">Открыть в Яндекс.Картах</a>
+      </div>
+    </div>
+    <p class="table-note">Схема условная. Вход со стороны Московского проспекта, на ресепшене назовите офис 702.</p>
+  </div>
+</section>
+
+<section class="section section--paper2">
+  <div class="wrap split">
+    <div class="split__aside" data-reveal>
+      <p class="eyebrow"><span class="eyebrow__num">11</span><span class="eyebrow__sep"></span>Как добраться</p>
+      <h2 class="split__title">Три способа доехать</h2>
+      <p class="split__note">Офис в БЦ «Балтийский» на Московском проспекте. Есть парковка для клиентов.</p>
+    </div>
+    <div class="value-list" data-reveal>
+      <div class="value-item"><span class="value-item__num">01</span><div><h3 class="value-item__title">На машине</h3><p class="value-item__text">Заезд с Московского проспекта, парковка у бизнес-центра. Скажите на ресепшене, что вы в «РусРесурс».</p></div></div>
+      <div class="value-item"><span class="value-item__num">02</span><div><h3 class="value-item__title">На общественном транспорте</h3><p class="value-item__text">Остановка «Московский проспект» — 3 минуты пешком. Подойдут трамваи и автобусы, идущие по проспекту.</p></div></div>
+      <div class="value-item"><span class="value-item__num">03</span><div><h3 class="value-item__title">Удалённо</h3><p class="value-item__text">Если приехать не получается — созвонимся, отправим документы на почту и подпишем договор электронно.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tight">
+  <div class="wrap">
+    <div class="requisites-block">
+      <h2 class="requisites-block__title">Реквизиты</h2>
+      <div class="requisites">
+        <div><span>Полное наименование</span><span>ООО «РусРесурс»</span></div>
+        <div><span>ИНН</span><span>По запросу</span></div>
+        <div><span>ОГРН</span><span>По запросу</span></div>
+        <div><span>Юридический адрес</span><span>г. Калининград, Московский проспект, 44</span></div>
+        <div><span>Статус</span><span>Лицензированное кадровое агентство</span></div>
+        <div><span>Документы</span><span>По запросу</span></div>
+      </div>
+      <p class="table-note">Карточку предприятия и копии документов отправим на почту в день запроса.</p>
+    </div>
+  </div>
+</section>
+
+

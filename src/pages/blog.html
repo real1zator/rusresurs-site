@@ -1,0 +1,71 @@
+<section class="page-hero page-hero--ruled">
+  <div class="wrap">
+    <nav aria-label="Хлебные крошки">
+      <ol class="breadcrumbs">
+        <li><a href="index.html">Главная</a></li>
+        <li><span aria-current="page">Блог</span></li>
+      </ol>
+    </nav>
+    <div class="page-hero__grid">
+      <div>
+        <p class="eyebrow"><span class="eyebrow__num">08</span><span class="eyebrow__sep"></span>Блог</p>
+        <h1 class="page-hero__title">О персонале — без маркетингового тумана</h1>
+        <p class="lead page-hero__lead">Как считать смену, что спрашивать у подрядчика, как не сорвать сезон. Практические статьи для тех, кто отвечает за людей и объект.</p>
+      </div>
+      <div class="page-hero__aside">
+        <div class="fact-list">
+          <div class="fact-list__item"><span class="fact-list__num">5</span><span class="fact-list__label">статей в блоге</span></div>
+          <div class="fact-list__item"><span class="fact-list__num">6–9</span><span class="fact-list__label">минут на чтение</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--flush-top">
+  <div class="wrap" data-filter-scope>
+    <div class="filter-bar">
+{{BLOG_FILTERS}}
+      <label class="search">
+        <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="5" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M11 11l4 4" stroke="currentColor" stroke-width="1.4"/></svg>
+        <span class="visually-hidden">Поиск по статьям</span>
+        <input class="field__input" type="search" placeholder="Найти статью: договор, сезон, расчёт…" data-search-input>
+      </label>
+    </div>
+
+    <div class="post-grid">
+{{BLOG_ALL}}
+    </div>
+    <p class="empty-state" data-empty>По этому запросу статей не нашлось. Попробуйте другую тему — или задайте вопрос напрямую, мы ответим.</p>
+  </div>
+</section>
+
+<section class="section section--paper2">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <div class="sec-head__main">
+        <p class="eyebrow"><span class="eyebrow__num">09</span><span class="eyebrow__sep"></span>О чём пишем</p>
+        <h2 class="sec-head__title">Три темы, которые важны заказчикам</h2>
+      </div>
+    </div>
+    <div class="card-grid card-grid--3">
+      <article class="mini-card"><p class="mini-card__num">01</p><h3>Договор и документы</h3><p>Как отличить агентство с людьми от посредника, что проверить в договоре, как устроена ответственность.</p></article>
+      <article class="mini-card"><p class="mini-card__num">02</p><h3>Деньги</h3><p>Из чего складывается ставка, почему дешёвое предложение дорожает и как сравнивать сметы.</p></article>
+      <article class="mini-card"><p class="mini-card__num">03</p><h3>Сезон и производство</h3><p>Как укомплектовать пик, пройти санитарный контроль и не остановить линию.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap cta-band__in">
+    <div>
+      <h2 class="cta-band__title">Нужен ответ, а не статья?</h2>
+      <p class="cta-band__text">Задайте вопрос напрямую: ответим по делу, без продающих презентаций.</p>
+    </div>
+    <div class="cta-band__actions">
+      <a class="cta-band__phone" href="tel:+74012000000">+7 (4012) 00-00-00</a>
+      <button class="btn btn--copper" type="button" data-open-order>Задать вопрос</button>
+      <a class="btn btn--outline-light" href="faq.html">Вопросы и ответы</a>
+    </div>
+  </div>
+</section>

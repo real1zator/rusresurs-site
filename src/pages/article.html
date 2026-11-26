@@ -1,0 +1,53 @@
+<article>
+  <header class="article-head">
+    <div class="wrap">
+      <nav aria-label="Хлебные крошки">
+        <ol class="breadcrumbs">
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="blog.html">Блог</a></li>
+          <li><span aria-current="page">{{A_CATEGORY}}</span></li>
+        </ol>
+      </nav>
+      <div class="article-head__meta">
+        <span>{{A_CATEGORY}}</span>
+        <time datetime="{{A_DATE_ISO}}">{{A_DATE_LABEL}}</time>
+        <span>{{A_READ}} чтения</span>
+      </div>
+      <h1 class="article-head__title">{{A_TITLE}}</h1>
+      <p class="lead article-head__excerpt">{{A_EXCERPT}}</p>
+    </div>
+  </header>
+
+  <figure class="article-cover">
+    <img src="assets/img/{{A_COVER}}" alt="{{A_COVER_ALT}}" fetchpriority="high" decoding="async">
+  </figure>
+
+  <div class="wrap article-layout">
+    <div>
+      <div class="article-body">
+{{A_BODY}}
+      </div>
+
+      <div class="article-footer">
+        <p class="article-footer__title">Нужно закрыть смену, а не читать статьи?</p>
+        <p class="article-footer__text">Посчитаем стоимость и предложим людей под ваш объект — за один звонок.</p>
+        <div class="article-footer__actions">
+          <a class="btn btn--copper" href="prices.html#calc">Рассчитать стоимость</a>
+          <a class="btn btn--ghost" href="contacts.html">Связаться</a>
+        </div>
+      </div>
+    </div>
+
+    <aside class="article-aside">
+      <nav class="toc" data-toc aria-label="Содержание статьи">
+        <p class="toc__title">В статье</p>
+        <ol></ol>
+      </nav>
+      <div class="aside-cta">
+        <p class="aside-cta__title">Смена под ключ</p>
+        <p>Подберём людей, оформим и выведем на объект. Ответим за 15 минут в рабочее время.</p>
+        <button class="btn btn--copper" type="button" data-open-order>Оставить заявку</button>
+      </div>
+    </aside>
+  </div>
+</article>

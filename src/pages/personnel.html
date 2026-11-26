@@ -1,0 +1,71 @@
+<section class="page-hero page-hero--ruled">
+  <div class="wrap">
+    <nav aria-label="Хлебные крошки">
+      <ol class="breadcrumbs">
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="services.html">Услуги</a></li>
+        <li><span aria-current="page">Персонал и ставки</span></li>
+      </ol>
+    </nav>
+    <div class="page-hero__grid">
+      <div>
+        <p class="eyebrow"><span class="eyebrow__num">03</span><span class="eyebrow__sep"></span>Персонал</p>
+        <h1 class="page-hero__title">Кого выводим на объекты</h1>
+        <p class="lead page-hero__lead">16 профессий для склада, производства, стройки, клининга и агро. Выберите нужную — покажем ставку и минимальный заказ.</p>
+      </div>
+      <div class="page-hero__aside">
+        <div class="fact-list">
+          <div class="fact-list__item"><span class="fact-list__num">от 330 ₽</span><span class="fact-list__label">ставка за час, без скрытых доплат</span></div>
+          <div class="fact-list__item"><span class="fact-list__num">1 чел.</span><span class="fact-list__label">минимальный заказ, от 4 часов</span></div>
+          <div class="fact-list__item"><span class="fact-list__num">24 ч</span><span class="fact-list__label">на вывод типовой позиции</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap" data-filter-scope>
+    <div class="filter-bar">
+{{PROFESSION_FILTERS}}
+      <label class="search">
+        <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="5" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M11 11l4 4" stroke="currentColor" stroke-width="1.4"/></svg>
+        <span class="visually-hidden">Поиск по профессиям</span>
+        <input class="field__input" type="search" placeholder="Найти профессию: грузчик, сварщик, уборка…" data-search-input>
+      </label>
+    </div>
+
+    <div class="prof-grid">
+{{PROFESSIONS_FULL}}
+    </div>
+    <p class="empty-state" data-empty>По этому запросу ничего не нашлось. Попробуйте другую профессию или <button class="link-more" type="button" data-open-order>оставьте заявку</button> — подберём людей под задачу.</p>
+
+    <p class="section__note">Ставки — ориентир для Калининграда и области на 2026 год. Итог зависит от объекта, графика, ночных смен и требований к допускам. Минимальный заказ — один человек на четыре часа.</p>
+  </div>
+</section>
+
+<section class="section section--paper2">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <div class="sec-head__main">
+        <p class="eyebrow"><span class="eyebrow__num">04</span><span class="eyebrow__sep"></span>Как заказать</p>
+        <h2 class="sec-head__title">Три шага до смены</h2>
+      </div>
+      <div class="sec-head__aside">
+        <p>Не нужно готовить вакансию и проводить собеседования. Достаточно описать задачу и график.</p>
+      </div>
+    </div>
+    <div class="card-grid card-grid--3">
+      <article class="mini-card" data-reveal><p class="mini-card__num">01</p><h3>Выбираете профессию</h3><p>Или описываете задачу словами: «разгрузить фуру», «убрать цех», «нужны двое на демонтаж».</p></article>
+      <article class="mini-card" data-reveal style="--d:70ms"><p class="mini-card__num">02</p><h3>Получаете смету</h3><p>Считаем ставку, количество людей и резерв. Показываем, что входит в цену.</p></article>
+      <article class="mini-card" data-reveal style="--d:140ms"><p class="mini-card__num">03</p><h3>Смена выходит</h3><p>Оформляем людей, проводим инструктаж и выводим на объект — от 24 часов.</p></article>
+    </div>
+    <div class="personnel-cta">
+      <p>Не нашли профессию в списке? Это не значит, что мы не сможем помочь.</p>
+      <div class="personnel-cta__actions">
+        <button class="btn btn--copper" type="button" data-open-order>Описать задачу</button>
+        <a class="btn btn--ghost" href="tel:+74012000000">+7 (4012) 00-00-00</a>
+      </div>
+    </div>
+  </div>
+</section>

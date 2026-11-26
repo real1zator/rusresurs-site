@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://rusresurs39.ru/sitemap.xml
