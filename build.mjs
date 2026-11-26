@@ -523,5 +523,7 @@ const urls = pages.filter((p) => p.file !== '404.html').map((p) => `  <url><loc>
 for (const a of articles) urls.push(`  <url><loc>${site.url}/blog-${a.slug}.html</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>`);
 fs.writeFileSync(path.join(dist, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.join('\n')}\n</urlset>\n`);
 fs.writeFileSync(path.join(dist, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${site.url}/sitemap.xml\n`);
+fs.writeFileSync(path.join(dist, '.nojekyll'), '');
 
 console.log(`Built ${pages.length} pages + ${articles.length} articles into dist/`);
+

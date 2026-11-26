@@ -5,9 +5,11 @@
   "description": "Сайт кадрового агентства «РусРесурс» — аутсорсинг и аутстаффинг рабочего персонала",
   "scripts": {
     "build": "node build.mjs",
-    "serve": "node scripts/serve.mjs"
+    "serve": "node scripts/serve.mjs",
+    "deploy": "node build.mjs && node scripts/publish-pages.mjs"
   },
   "engines": {
     "node": ">=18"
   }
 }
+
