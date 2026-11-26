@@ -1,4 +1,4 @@
-/* РусРесурс — движение: параллакс изображений и «живые» счётчики секций */
+﻿/* РусРесурс — движение: параллакс изображений и «живые» счётчики секций */
 (function () {
   'use strict';
 
@@ -15,12 +15,16 @@
     const update = () => {
       ticking = false;
       const vh = window.innerHeight;
-      media.forEach((img) => {
+      // сначала читаем все размеры, потом пишем стили — без лишних reflow
+      const shifts = media.map((img) => {
         const r = img.parentElement.getBoundingClientRect();
-        if (r.bottom < -200 || r.top > vh + 200) return;
-        const progress = (r.top + r.height / 2 - vh / 2) / vh; // -1..1
-        const shift = Math.max(-14, Math.min(14, progress * -16));
-        img.style.transform = 'translate3d(0,' + shift.toFixed(2) + 'px,0) scale(1.06)';
+        if (r.bottom < -200 || r.top > vh + 200) return null;
+        const progress = (r.top + r.height / 2 - vh / 2) / vh;
+        return Math.max(-14, Math.min(14, progress * -16));
+      });
+      shifts.forEach((shift, i) => {
+        if (shift === null) return;
+        media[i].style.transform = 'translate3d(0,' + shift.toFixed(2) + 'px,0) scale(1.06)';
       });
     };
     const onScroll = () => {
@@ -32,6 +36,23 @@
     window.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('resize', onScroll);
     update();
+  }
+
+  /* ---------- волна «воды» слегка покачивается при скролле ---------- */
+  const liquid = document.querySelector('.liquid');
+  if (liquid) {
+    let raf = 0;
+    const shift = () => {
+      raf = 0;
+      const r = liquid.getBoundingClientRect();
+      const vh = window.innerHeight || 1;
+      const p = (r.top + r.height / 2 - vh / 2) / vh;
+      const y = Math.max(-18, Math.min(18, p * 22));
+      liquid.style.setProperty('--liquid-y', y.toFixed(2) + 'px');
+    };
+    window.addEventListener('scroll', () => { if (!raf) raf = requestAnimationFrame(shift); }, { passive: true });
+    window.addEventListener('resize', shift);
+    shift();
   }
 
   /* ---------- номер секции «печатается» ---------- */
@@ -63,3 +84,5 @@
     }, { passive: true });
   });
 })();
+
+

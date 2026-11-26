@@ -2483,15 +2483,21 @@ body { position: relative; }
 /* --- бегущая строка --- */
 .ticker {
   position: relative;
+  margin-top: -1px;
+  border-top: 0;
   overflow: hidden;
   background: linear-gradient(90deg, #0B1B2D, #102A44 40%, #0B1B2D);
   color: var(--paper);
   border-block: 1px solid rgba(243, 239, 230, 0.1);
   padding: 13px 0;
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
-  mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
 }
-.ticker__track { display: flex; width: max-content; animation: tickerRun 34s linear infinite; }
+.ticker__track {
+  display: flex;
+  width: max-content;
+  animation: tickerRun 34s linear infinite;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
 .ticker:hover .ticker__track { animation-play-state: paused; }
 .ticker__row { display: flex; }
 .ticker__item {
@@ -2512,21 +2518,22 @@ body { position: relative; }
 .hero__blob {
   position: absolute;
   border-radius: 50%;
-  filter: blur(70px);
-  opacity: 0.5;
+  opacity: 0.42;
   mix-blend-mode: screen;
+  /* без filter: blur() — радиальный градиент уже мягкий, а blur тянул GPU */
+  will-change: transform;
 }
 .hero__blob--1 {
   width: 46vw; height: 46vw;
   right: -6vw; top: -10vw;
   background: radial-gradient(circle at 40% 40%, rgba(200, 122, 67, 0.85), rgba(156, 79, 36, 0) 68%);
-  animation: blobA 21s ease-in-out infinite;
+  animation: blobA 24s ease-in-out infinite;
 }
 .hero__blob--2 {
   width: 34vw; height: 34vw;
   left: -8vw; bottom: -12vw;
   background: radial-gradient(circle at 60% 40%, rgba(64, 112, 158, 0.75), rgba(11, 27, 45, 0) 70%);
-  animation: blobB 27s ease-in-out infinite;
+  animation: blobB 32s ease-in-out infinite;
 }
 .hero__blob--3 {
   width: 22vw; height: 22vw;
@@ -2740,7 +2747,8 @@ body { position: relative; }
   .hero__blob--1 { width: 78vw; height: 78vw; right: -24vw; top: -16vw; opacity: 0.42; }
   .hero__blob--2 { width: 66vw; height: 66vw; opacity: 0.38; }
   .hero__blob--3 { display: none; }
-  .ticker { padding: 9px 0; -webkit-mask-image: linear-gradient(90deg, transparent, #000 14%, #000 86%, transparent); mask-image: linear-gradient(90deg, transparent, #000 14%, #000 86%, transparent); }
+  .ticker { padding: 9px 0; }
+  .ticker__track { -webkit-mask-image: linear-gradient(90deg, transparent, #000 14%, #000 86%, transparent); mask-image: linear-gradient(90deg, transparent, #000 14%, #000 86%, transparent); }
   .ticker__item { font-size: 14px; gap: 20px; padding-right: 20px; letter-spacing: 0.01em; }
   .ticker__item::after { font-size: 7px; }
   .ticker__track { animation-duration: 26s; }
@@ -3071,4 +3079,148 @@ body { position: relative; }
     background: rgba(255, 253, 247, 0.55);
   }
   .value-list .value-item:last-child { margin-bottom: 0; }
+}
+
+
+/* ==========================================================================
+   ВОДА: волна на стыке первого экрана и ленты
+   ========================================================================== */
+.liquid {
+  position: relative;
+  height: clamp(70px, 9vw, 118px);
+  margin-top: -1px;
+  overflow: hidden;
+  background: var(--ink);
+  isolation: isolate;
+  --liquid-y: 0px;
+}
+.liquid::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(80% 120% at 50% 0%, rgba(200, 122, 67, 0.14), transparent 70%),
+    linear-gradient(180deg, rgba(6, 18, 31, 0.9), rgba(6, 18, 31, 0));
+  pointer-events: none;
+}
+.liquid__svg {
+  position: absolute;
+  left: 0;
+  width: 200%;
+  max-width: none;
+  height: 100%;
+  transform: translate3d(0, var(--liquid-y), 0);
+  will-change: transform;
+}
+.liquid__svg path { transition: none; }
+.liquid__svg--back {
+  top: 0;
+  opacity: 0.9;
+  animation: liquidSlide 17s linear infinite;
+}
+.liquid__svg--back path { fill: rgba(206, 128, 74, 0.62); }
+.liquid__svg--front {
+  top: 0;
+  animation: liquidSlide 11s linear infinite reverse;
+}
+.liquid__svg--front path { fill: var(--ink); }
+.liquid::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 30%;
+  background: linear-gradient(180deg, var(--ink), rgba(11, 27, 45, 0));
+  z-index: 2;
+  pointer-events: none;
+}
+
+@keyframes liquidSlide {
+  0% { transform: translate3d(0, 0, 0); }
+  25% { transform: translate3d(-12.5%, 1.5px, 0); }
+  50% { transform: translate3d(-25%, 0, 0); }
+  75% { transform: translate3d(-37.5%, -1.5px, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
+}
+.liquid__crest {
+  fill: none;
+  stroke: rgba(255, 222, 192, 0.55);
+  stroke-width: 1.6;
+  vector-effect: non-scaling-stroke;
+  filter: drop-shadow(0 0 6px rgba(255, 210, 170, 0.35));
+}
+
+@media (max-width: 760px) {
+  .liquid { height: 64px; }
+  .liquid__svg--back { animation-duration: 20s; opacity: 0.5; }
+  .liquid__svg--front { animation-duration: 12s; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .liquid__svg--back, .liquid__svg--front { animation: none; }
+}
+
+
+
+
+
+
+/* --- швы: убираем линии на стыке первого экрана, воды и ленты --- */
+.ticker { border-top: 0 !important; margin-top: -1px; }
+.liquid { border: 0 !important; }
+.liquid::after {
+  background: radial-gradient(80% 120% at 50% 0%, rgba(200, 122, 67, 0.16), transparent 72%);
+}
+
+/* --- убираем 1px-швы от композитных слоёв --- */
+.liquid__svg {
+  will-change: auto;
+  top: -2px;
+  height: calc(100% + 4px);
+  backface-visibility: hidden;
+}
+.liquid { contain: paint; }
+
+/* --- плавные переходы тона: без ступенек на стыках --- */
+.liquid {
+  background: linear-gradient(180deg, #0C1726 0%, #0B1B2D 46%, #0F273F 100%);
+}
+.liquid::after {
+  background: radial-gradient(90% 130% at 50% 0%, rgba(200, 122, 67, 0.10), transparent 74%);
+}
+.ticker {
+  background: linear-gradient(90deg, #0E2440, #122E4B 40%, #0E2440);
+}
+
+/* --- финальная склейка тонов: всё в один чернильный тон --- */
+.liquid {
+  background: var(--ink);
+}
+.liquid::before { display: none; }
+.liquid::after {
+  background: radial-gradient(90% 130% at 50% 0%, rgba(200, 122, 67, 0.08), transparent 74%);
+}
+.ticker {
+  background: var(--ink);
+}
+
+.liquid::after { display: none; }
+
+/* --- убираем дорогой blur с больших фоновых пятен (джанк при скролле) --- */
+.section--dark::before, .cta-band::before, .page-hero--dark::before,
+.section--dark::after, .cta-band::after, .page-hero--dark::after {
+  filter: none;
+}
+.section--dark::before, .cta-band::before, .page-hero--dark::before {
+  background: radial-gradient(circle at 50% 50%,
+    rgba(200, 122, 67, 0.22) 0%,
+    rgba(200, 122, 67, 0.12) 32%,
+    rgba(200, 122, 67, 0.04) 52%,
+    rgba(200, 122, 67, 0) 70%);
+}
+.section--dark::after, .cta-band::after, .page-hero--dark::after {
+  background: radial-gradient(circle at 50% 50%,
+    rgba(74, 122, 168, 0.24) 0%,
+    rgba(74, 122, 168, 0.12) 34%,
+    rgba(74, 122, 168, 0.04) 54%,
+    rgba(74, 122, 168, 0) 72%);
 }
