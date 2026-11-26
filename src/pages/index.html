@@ -1,7 +1,12 @@
-<section class="hero">
+﻿<section class="hero">
   <div class="hero__media">
     <img src="assets/img/hero-main.jpg" alt="Работник склада с гидравлической тележкой между стеллажами" fetchpriority="high" decoding="async">
     <canvas class="hero__dots" data-hero-canvas aria-hidden="true"></canvas>
+  </div>
+  <div class="hero__aurora" aria-hidden="true">
+    <span class="hero__blob hero__blob--1"></span>
+    <span class="hero__blob hero__blob--2"></span>
+    <span class="hero__blob hero__blob--3"></span>
   </div>
   <div class="hero__scrim" aria-hidden="true"></div>
 
@@ -65,6 +70,31 @@
   </div>
 </section>
 
+<div class="ticker" aria-hidden="true">
+  <div class="ticker__track" data-ticker>
+    <div class="ticker__row">
+      <span class="ticker__item">Аутсорсинг</span>
+      <span class="ticker__item">Аутстаффинг</span>
+      <span class="ticker__item">600+ человек в штате</span>
+      <span class="ticker__item">Смена от 24 часов</span>
+      <span class="ticker__item">20 000+ выходов</span>
+      <span class="ticker__item">Замена в смену</span>
+      <span class="ticker__item">Договор и документы</span>
+      <span class="ticker__item">Работаем по области</span>
+    </div>
+    <div class="ticker__row">
+      <span class="ticker__item">Аутсорсинг</span>
+      <span class="ticker__item">Аутстаффинг</span>
+      <span class="ticker__item">600+ человек в штате</span>
+      <span class="ticker__item">Смена от 24 часов</span>
+      <span class="ticker__item">20 000+ выходов</span>
+      <span class="ticker__item">Замена в смену</span>
+      <span class="ticker__item">Договор и документы</span>
+      <span class="ticker__item">Работаем по области</span>
+    </div>
+  </div>
+</div>
+
 <section class="section" id="services">
   <div class="wrap">
     <div class="sec-head" data-reveal>
@@ -85,7 +115,7 @@
           <p class="svc-row__desc">Берём участок работ целиком: подбираем людей, оформляем, ставим задачи и отвечаем за результат. Вы принимаете работу по акту.</p>
           <ul class="tags svc-row__tags"><li>Смена 8/12 ч</li><li>Свой менеджер</li><li>Оплата по факту</li></ul>
         </div>
-        <div class="svc-row__media"><img src="assets/img/service-outsourcing.jpg" alt="Двое рабочих переносят коробку на складе" loading="lazy" decoding="async"></div>
+        <div class="svc-row__media framed"><img src="assets/img/service-outsourcing.jpg" alt="Двое рабочих переносят коробку на складе" loading="lazy" decoding="async"></div>
         <span class="svc-row__go" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M3 11L11 3M5 3h6v6" fill="none" stroke="currentColor" stroke-width="1.4"/></svg></span>
       </a>
 
@@ -96,7 +126,7 @@
           <p class="svc-row__desc">Выводим наших оформленных сотрудников на ваш объект. Люди работают под вашим управлением, а кадровый учёт, налоги и замены остаются на нас.</p>
           <ul class="tags svc-row__tags"><li>Люди в вашем процессе</li><li>Кадры на нас</li><li>Замена в смену</li></ul>
         </div>
-        <div class="svc-row__media"><img src="assets/img/service-outstaffing.jpg" alt="Бригада рабочих в спецодежде готова к смене" loading="lazy" decoding="async"></div>
+        <div class="svc-row__media framed"><img src="assets/img/service-outstaffing.jpg" alt="Бригада рабочих в спецодежде готова к смене" loading="lazy" decoding="async"></div>
         <span class="svc-row__go" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M3 11L11 3M5 3h6v6" fill="none" stroke="currentColor" stroke-width="1.4"/></svg></span>
       </a>
 
@@ -107,7 +137,7 @@
           <p class="svc-row__desc">Переезд, демонтаж, уборка участка, помощь на даче. Минимальный заказ — один человек на четыре часа, без предоплат и сложных договоров.</p>
           <ul class="tags svc-row__tags"><li>От 4 часов</li><li>1 человек</li><li>Оплата после работы</li></ul>
         </div>
-        <div class="svc-row__media"><img src="assets/img/service-private.jpg" alt="Мастер с инструментом на объекте" loading="lazy" decoding="async"></div>
+        <div class="svc-row__media framed"><img src="assets/img/service-private.jpg" alt="Мастер с инструментом на объекте" loading="lazy" decoding="async"></div>
         <span class="svc-row__go" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M3 11L11 3M5 3h6v6" fill="none" stroke="currentColor" stroke-width="1.4"/></svg></span>
       </a>
     </div>
@@ -307,7 +337,7 @@
       </div>
     </div>
 
-    <div class="calc" data-calc>
+    <div class="calc ring" data-calc>
       <div class="calc__form">
         <div class="calc__grid">
           <label class="field">
@@ -417,5 +447,7 @@
     <text x="100" y="112" text-anchor="middle" fill="currentColor" font-family="Oranienbaum, serif" font-size="64">РР</text>
   </svg>
 </section>
+
+
 
 

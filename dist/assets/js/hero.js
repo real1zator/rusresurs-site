@@ -81,7 +81,7 @@
       return false; // file:// и другие случаи, когда canvas нельзя читать
     }
 
-    const spacing = w > 1100 ? 13 : w > 600 ? 11 : 9;
+    const spacing = w > 1100 ? 12 : w > 600 ? 10 : 8;
     const dots = [];
 
     for (let y = spacing * 0.55; y < h; y += spacing) {
@@ -119,9 +119,6 @@
     const t = now / 1000;
 
     ctx.clearRect(0, 0, W, H);
-    ctx.globalAlpha = intro;
-    ctx.drawImage(state.off, 0, 0, W, H);
-    ctx.globalAlpha = 1;
 
     if (!reduce) {
       if (now - state.lastScan > 10500) {
@@ -152,7 +149,7 @@
 
       let x = d.x + (1 - e) * d.ox;
       let y = d.y + (1 - e) * d.oy;
-      let r = d.r * (0.35 + 0.65 * e);
+      let r = d.r * (0.4 + 0.6 * e) * 1.18;
 
       if (!reduce) {
         x += Math.sin(t * 0.55 + d.phase) * 1.1;
@@ -182,10 +179,10 @@
     }
 
     const paints = {
-      cream: 'rgba(243, 239, 230, 0.52)',
-      light: 'rgba(217, 154, 108, 0.5)',
-      copper: 'rgba(200, 122, 67, 0.45)',
-      deep: 'rgba(168, 90, 43, 0.36)',
+      cream: 'rgba(243, 239, 230, 0.72)',
+      light: 'rgba(217, 154, 108, 0.68)',
+      copper: 'rgba(200, 122, 67, 0.62)',
+      deep: 'rgba(168, 90, 43, 0.5)',
     };
 
     ctx.globalCompositeOperation = 'screen';
@@ -272,3 +269,4 @@
     img.addEventListener('load', start, { once: true });
   }
 })();
+

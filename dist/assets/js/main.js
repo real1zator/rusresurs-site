@@ -20,43 +20,32 @@
   onScroll();
   window.addEventListener('scroll', onScroll, { passive: true });
 
-  /* ---------- mobile nav ---------- */
+  /* ---------- mobile nav (нижняя панель, шторка отключена) ---------- */
   const burger = $('[data-burger]');
-  const nav = $('[data-nav]');
   const backdrop = document.createElement('div');
   backdrop.className = 'nav-backdrop';
   backdrop.hidden = true;
-  document.body.appendChild(backdrop);
-
-  let navOpen = false;
-  const setNav = (open) => {
-    navOpen = open;
-    document.body.classList.toggle('nav-open', open);
-    if (burger) {
+  if (burger) {
+    document.body.appendChild(backdrop);
+    let navOpen = false;
+    const nav = $('[data-nav]');
+    const setNav = (open) => {
+      navOpen = open;
+      document.body.classList.toggle('nav-open', open);
       burger.setAttribute('aria-expanded', String(open));
       burger.setAttribute('aria-label', open ? 'Закрыть меню' : 'Открыть меню');
-    }
-    backdrop.hidden = !open;
-    if (open) {
-      const first = nav && nav.querySelector('.nav__link');
-      if (first) setTimeout(() => first.focus({ preventScroll: true }), 120);
-    } else if (burger) {
-      burger.focus({ preventScroll: true });
-    }
-  };
-  if (burger) {
+      backdrop.hidden = !open;
+      if (open && nav) {
+        const first = nav.querySelector('.nav__link');
+        if (first) setTimeout(() => first.focus({ preventScroll: true }), 120);
+      }
+    };
     burger.addEventListener('click', () => setNav(!navOpen));
+    backdrop.addEventListener('click', () => setNav(false));
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navOpen) setNav(false);
+    });
   }
-  backdrop.addEventListener('click', () => setNav(false));
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && navOpen) setNav(false);
-  });
-  $$('.nav a').forEach((a) => a.addEventListener('click', () => {
-    if (navOpen) setNav(false);
-  }));
-  window.matchMedia('(min-width: 1025px)').addEventListener('change', (e) => {
-    if (e.matches && navOpen) setNav(false);
-  });
 
   /* ---------- dropdowns ---------- */
   $$('[data-nav-toggle]').forEach((btn) => {
@@ -84,9 +73,25 @@
 
   /* ---------- active nav ---------- */
   const current = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+  const tabOf = {
+    'services.html': 'services.html',
+    'outsourcing.html': 'services.html',
+    'outstaffing.html': 'services.html',
+    'personnel.html': 'services.html',
+    'industries.html': 'services.html',
+    'prices.html': 'prices.html',
+    'vacancies.html': 'vacancies.html',
+    'contacts.html': 'contacts.html',
+    'index.html': 'index.html',
+  };
+  const activeTab = tabOf[current] || (current.indexOf('blog-') === 0 ? '' : '');
   $$('[data-page]').forEach((a) => {
     if (a.dataset.page.toLowerCase() === current) a.setAttribute('aria-current', 'page');
   });
+  if (activeTab) {
+    const tab = $('.tabbar [data-page="' + activeTab + '"]');
+    if (tab) tab.setAttribute('aria-current', 'page');
+  }
   if (current.indexOf('blog-') === 0) {
     const blog = $('[data-page="blog.html"]');
     if (blog) blog.setAttribute('aria-current', 'page');
@@ -94,20 +99,21 @@
 
   /* ---------- reveal ---------- */
   const revealItems = $$('[data-reveal]');
-  if (revealItems.length) {
-    if ('IntersectionObserver' in window) {
-      const io = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-in');
-            io.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.1, rootMargin: '0px 0px -6% 0px' });
-      revealItems.forEach((el) => io.observe(el));
-    } else {
-      revealItems.forEach((el) => el.classList.add('is-in'));
-    }
+  const waveGrids = $$('.prof-grid, .post-grid, .case-grid, .card-grid');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -6% 0px' });
+    revealItems.forEach((el) => io.observe(el));
+    waveGrids.forEach((el) => io.observe(el));
+  } else {
+    revealItems.forEach((el) => el.classList.add('is-in'));
+    waveGrids.forEach((el) => el.classList.add('is-in'));
   }
 
   /* ---------- counters ---------- */
@@ -428,6 +434,56 @@
       tocBox.hidden = true;
     }
   }
+
+  /* ---------- прогресс чтения ---------- */
+  const progressBar = $('[data-progress]');
+  if (progressBar) {
+    let raf = 0;
+    const updateProgress = () => {
+      raf = 0;
+      const h = document.documentElement.scrollHeight - window.innerHeight;
+      const p = h > 0 ? Math.min(1, Math.max(0, window.scrollY / h)) : 0;
+      progressBar.style.width = (p * 100).toFixed(2) + '%';
+    };
+    window.addEventListener('scroll', () => {
+      if (!raf) raf = requestAnimationFrame(updateProgress);
+    }, { passive: true });
+    window.addEventListener('resize', updateProgress);
+    updateProgress();
+  }
+
+  /* ---------- подсветка под курсором ---------- */
+  const spotTargets = $$('.prof-card, .vac-card, .doc-card, .scenario, .mini-card, .rev-card, .case-card, .post-card, .svc-row');
+  spotTargets.forEach((el) => {
+    el.classList.add('spot');
+    el.addEventListener('pointermove', (e) => {
+      const r = el.getBoundingClientRect();
+      el.style.setProperty('--mx', ((e.clientX - r.left) / r.width) * 100 + '%');
+      el.style.setProperty('--my', ((e.clientY - r.top) / r.height) * 100 + '%');
+    }, { passive: true });
+  });
+
+  /* ---------- лёгкое магнитное притяжение кнопок ---------- */
+  if (!reduced && window.matchMedia('(hover: hover)').matches) {
+    $$('.btn--copper').forEach((btn) => {
+      btn.addEventListener('pointermove', (e) => {
+        const r = btn.getBoundingClientRect();
+        const dx = (e.clientX - (r.left + r.width / 2)) / r.width;
+        const dy = (e.clientY - (r.top + r.height / 2)) / r.height;
+        btn.style.transform = 'translate(' + (dx * 4).toFixed(2) + 'px,' + (dy * 3 - 2).toFixed(2) + 'px)';
+      }, { passive: true });
+      btn.addEventListener('pointerleave', () => { btn.style.transform = ''; });
+    });
+  }
+
+  /* ---------- бегущая строка: гарантируем бесшовность ---------- */
+  $$('[data-ticker]').forEach((track) => {
+    const rows = $$('.ticker__row', track);
+    if (rows.length === 2) {
+      const width = rows[0].offsetWidth;
+      track.style.setProperty('--ticker-w', width + 'px');
+    }
+  });
 
   /* ---------- misc ---------- */
   $$('.table-wrap').forEach((el) => {
