@@ -1,4 +1,4 @@
-﻿/* РусРесурс — движение: параллакс изображений и «живые» счётчики секций */
+/* РусРесурс — движение: параллакс изображений и «живые» счётчики секций */
 (function () {
   'use strict';
 
@@ -38,24 +38,7 @@
     update();
   }
 
-  /* ---------- волна «воды» слегка покачивается при скролле ---------- */
-  const liquid = document.querySelector('.liquid');
-  if (liquid) {
-    let raf = 0;
-    const shift = () => {
-      raf = 0;
-      const r = liquid.getBoundingClientRect();
-      const vh = window.innerHeight || 1;
-      const p = (r.top + r.height / 2 - vh / 2) / vh;
-      const y = Math.max(-18, Math.min(18, p * 22));
-      liquid.style.setProperty('--liquid-y', y.toFixed(2) + 'px');
-    };
-    window.addEventListener('scroll', () => { if (!raf) raf = requestAnimationFrame(shift); }, { passive: true });
-    window.addEventListener('resize', shift);
-    shift();
-  }
-
-  /* ---------- номер секции «печатается» ---------- */
+  /* ---------- волна-швы покачиваются через flow.js ---------- */
   const nums = Array.from(document.querySelectorAll('.eyebrow__num, .step__num, .svc-row__num'));
   if (nums.length && 'IntersectionObserver' in window) {
     const io = new IntersectionObserver((entries) => {

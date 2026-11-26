@@ -123,115 +123,97 @@
 
 </div>
 <main id="main" class="main">
-<section class="hero">
-  <div class="hero__media">
-    <img src="assets/img/hero-main.jpg" alt="Работник склада с гидравлической тележкой между стеллажами" fetchpriority="high" decoding="async">
-    <canvas class="hero__dots" data-hero-canvas aria-hidden="true"></canvas>
-  </div>
+<section class="hero" id="top">
   <div class="hero__aurora" aria-hidden="true">
     <span class="hero__blob hero__blob--1"></span>
     <span class="hero__blob hero__blob--2"></span>
     <span class="hero__blob hero__blob--3"></span>
   </div>
-  <div class="hero__scrim" aria-hidden="true"></div>
 
-  <div class="wrap hero__inner">
-    <div class="hero__content">
+  <div class="wrap hero__grid">
+    <div class="hero__copy">
       <p class="hero__kicker"><span>Лицензированное кадровое агентство</span><span class="hero__kicker-sep" aria-hidden="true"></span><span>Калининград и область</span></p>
-      <h1 class="hero__title">Рабочий персонал,<br class="hero__br"> который выходит<br class="hero__br"> на смену вовремя</h1>
-      <p class="hero__lead">Аутсорсинг и аутстаффинг для заводов, складов, строек и агрохолдингов. Оформляем людей, закрываем документы и держим замену — вам остаётся работа.</p>
+      <h1 class="hero__title">
+        <span class="h-line"><span style="--i:0">Рабочий персонал,</span></span>
+        <span class="h-line"><span style="--i:1">который выходит</span></span>
+        <span class="h-line"><span style="--i:2">на смену вовремя</span></span>
+      </h1>
+      <p class="hero__lead">Аутсорсинг и аутстаффинг. Оформляем людей, держим замену и закрываем документы — вам остаётся работа.</p>
       <div class="hero__actions">
         <a class="btn btn--copper" href="prices.html#calc">
           Рассчитать стоимость
           <svg width="14" height="10" viewBox="0 0 14 10" aria-hidden="true"><path d="M1 5h11M9 1l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>
         </a>
-        <a class="hero__call" href="tel:+74012000000">
-          <span>Позвонить, если смена уже завтра</span>
-          <strong>+7 (4012) 00-00-00</strong>
-        </a>
+        <a class="btn btn--outline-light" href="tel:+74012000000">Позвонить</a>
       </div>
-      <ul class="hero__links">
-        <li><a href="#services">Услуги и форматы</a></li>
-        <li><a href="#steps">Этапы запуска</a></li>
-        <li><a href="personnel.html">Персонал и ставки</a></li>
-      </ul>
+      <div class="hero__scrollcue" aria-hidden="true">
+        <i></i>
+        <span>листайте — течение начнётся</span>
+      </div>
     </div>
 
-    <div class="hero__aside">
-      <svg class="seal" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
-        <defs><path id="sealPath" d="M100,100 m-76,0 a76,76 0 1,1 152,0 a76,76 0 1,1 -152,0"/></defs>
-        <circle cx="100" cy="100" r="97" fill="none" stroke="currentColor" stroke-width="0.9" opacity=".55"/>
-        <circle cx="100" cy="100" r="85" fill="none" stroke="currentColor" stroke-width="0.9" stroke-dasharray="1 5" opacity=".55"/>
-        <text fill="currentColor" font-size="10" letter-spacing="2.4">
-          <textPath href="#sealPath" startOffset="0">КАДРОВОЕ АГЕНТСТВО · КАЛИНИНГРАД ·</textPath>
-        </text>
-        <text x="100" y="97" text-anchor="middle" fill="currentColor" font-family="Oranienbaum, serif" font-size="46">РР</text>
-        <text x="100" y="119" text-anchor="middle" fill="currentColor" font-size="8.2" letter-spacing="3.2">РУСРЕСУРС</text>
-        <line x1="74" y1="129" x2="126" y2="129" stroke="currentColor" stroke-width="0.8" opacity=".6"/>
-        <text x="100" y="142" text-anchor="middle" fill="currentColor" font-size="7.4" letter-spacing="1.8">С 2018 ГОДА</text>
-      </svg>
-    </div>
+    <figure class="porthole" data-porthole>
+      <span class="porthole__frame">
+        <img src="assets/img/hero-main.jpg" alt="Работник склада с гидравлической тележкой между стеллажами" fetchpriority="high" decoding="async">
+        <canvas class="hero__dots" data-hero-canvas aria-hidden="true"></canvas>
+        <span class="porthole__ring" aria-hidden="true"></span>
+      </span>
+      <span class="porthole__tag" data-float="0.12">Склад · смена 8/12</span>
+      <span class="porthole__chip porthole__chip--a" data-float="0.2">600+ в штате</span>
+      <span class="porthole__chip porthole__chip--b" data-float="0.3">замена в смену</span>
+    </figure>
   </div>
 
-  <div class="wrap">
+  <div class="hero__foot wrap">
     <ul class="hero__stats">
       <li class="hero__stat">
         <span class="stat__num" data-count="20000" data-suffix="+">20 000+</span>
-        <span class="stat__label">сотрудников выведено на объекты с 2018 года</span>
+        <span class="stat__label">сотрудников выведено</span>
       </li>
       <li class="hero__stat">
         <span class="stat__num" data-count="600" data-suffix="+">600+</span>
-        <span class="stat__label">человек в штате агентства</span>
+        <span class="stat__label">человек в штате</span>
       </li>
       <li class="hero__stat">
         <span class="stat__num">24 ч</span>
         <span class="stat__label">на вывод типовой смены</span>
       </li>
-      <li class="hero__stat">
-        <span class="stat__num">6</span>
-        <span class="stat__label">отраслей: от автозаводов до частных заказов</span>
-      </li>
     </ul>
   </div>
 </section>
-
-<div class="liquid" aria-hidden="true">
-  <svg class="liquid__svg liquid__svg--back" viewBox="0 0 2880 120" preserveAspectRatio="none" focusable="false">
-    <path d="M0 58 Q 90 34 180 58 T 360 58 T 540 58 T 720 58 T 900 58 T 1080 58 T 1260 58 T 1440 58 T 1620 58 T 1800 58 T 1980 58 T 2160 58 T 2340 58 T 2520 58 T 2700 58 T 2880 58 L 2880 120 L 0 120 Z"/>
-    <path class="liquid__crest" d="M0 58 Q 90 34 180 58 T 360 58 T 540 58 T 720 58 T 900 58 T 1080 58 T 1260 58 T 1440 58 T 1620 58 T 1800 58 T 1980 58 T 2160 58 T 2340 58 T 2520 58 T 2700 58 T 2880 58"/>
-  </svg>
-  <svg class="liquid__svg liquid__svg--front" viewBox="0 0 2880 120" preserveAspectRatio="none" focusable="false">
-    <path d="M0 96 Q 120 74 240 96 T 480 96 T 720 96 T 960 96 T 1200 96 T 1440 96 T 1680 96 T 1920 96 T 2160 96 T 2400 96 T 2640 96 T 2880 96 L 2880 120 L 0 120 Z"/>
-  </svg>
-
-</div>
 
 <div class="ticker" aria-hidden="true">
   <div class="ticker__track" data-ticker>
     <div class="ticker__row">
       <span class="ticker__item">Аутсорсинг</span>
       <span class="ticker__item">Аутстаффинг</span>
-      <span class="ticker__item">600+ человек в штате</span>
       <span class="ticker__item">Смена от 24 часов</span>
       <span class="ticker__item">20 000+ выходов</span>
       <span class="ticker__item">Замена в смену</span>
       <span class="ticker__item">Договор и документы</span>
+      <span class="ticker__item">600+ в штате</span>
       <span class="ticker__item">Работаем по области</span>
     </div>
     <div class="ticker__row">
       <span class="ticker__item">Аутсорсинг</span>
       <span class="ticker__item">Аутстаффинг</span>
-      <span class="ticker__item">600+ человек в штате</span>
       <span class="ticker__item">Смена от 24 часов</span>
       <span class="ticker__item">20 000+ выходов</span>
       <span class="ticker__item">Замена в смену</span>
       <span class="ticker__item">Договор и документы</span>
+      <span class="ticker__item">600+ в штате</span>
       <span class="ticker__item">Работаем по области</span>
     </div>
   </div>
 </div>
 
-<section class="section" id="services">
+<div class="wave-seam" style="--from:#0B1B2D; --to:#F3EFE6" aria-hidden="true">
+  <div class="wave-layer wave-layer--accent"><svg viewBox="0 0 1440 110" preserveAspectRatio="none"><path d="M0 34 Q240 -2 480 34 T720 34 T960 34 T1200 34 T1440 34 L1440 110 L0 110 Z"/></svg></div>
+  <div class="wave-layer wave-layer--main"><svg viewBox="0 0 1440 110" preserveAspectRatio="none"><path d="M0 34 Q240 -2 480 34 T720 34 T960 34 T1200 34 T1440 34 L1440 110 L0 110 Z"/></svg></div>
+</div>
+
+<section class="section has-ghost" id="services">
+  <span class="ghost ghost--light" data-float="0.06" aria-hidden="true">ПОТОК</span>
   <div class="wrap">
     <div class="sec-head" data-reveal>
       <div class="sec-head__main">
@@ -239,7 +221,7 @@
         <h2 class="sec-head__title">Три способа закрыть смену</h2>
       </div>
       <div class="sec-head__aside">
-        <p>Формат зависит от того, кто отвечает за результат. Если нужны люди под ваши задачи и вашего прораба — это аутстаффинг. Если нужен готовый участок работ — аутсорсинг.</p>
+        <p>Формат зависит от того, кто отвечает за результат. Сомневаетесь — подскажем.</p>
       </div>
     </div>
 
@@ -248,10 +230,10 @@
         <span class="svc-row__num">01</span>
         <div class="svc-row__body">
           <h3 class="svc-row__title">Аутсорсинг персонала</h3>
-          <p class="svc-row__desc">Берём участок работ целиком: подбираем людей, оформляем, ставим задачи и отвечаем за результат. Вы принимаете работу по акту.</p>
+          <p class="svc-row__desc">Берём участок работ целиком. Вы принимаете результат по акту.</p>
           <ul class="tags svc-row__tags"><li>Смена 8/12 ч</li><li>Свой менеджер</li><li>Оплата по факту</li></ul>
         </div>
-        <div class="svc-row__media framed"><img src="assets/img/service-outsourcing.jpg" alt="Двое рабочих переносят коробку на складе" loading="lazy" decoding="async"></div>
+        <div class="svc-row__media framed"><img src="assets/img/service-outsourcing.jpg" alt="Двое рабочих переносят коробки на складе" loading="lazy" decoding="async"></div>
         <span class="svc-row__go" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M3 11L11 3M5 3h6v6" fill="none" stroke="currentColor" stroke-width="1.4"/></svg></span>
       </a>
 
@@ -259,19 +241,19 @@
         <span class="svc-row__num">02</span>
         <div class="svc-row__body">
           <h3 class="svc-row__title">Аутстаффинг</h3>
-          <p class="svc-row__desc">Выводим наших оформленных сотрудников на ваш объект. Люди работают под вашим управлением, а кадровый учёт, налоги и замены остаются на нас.</p>
-          <ul class="tags svc-row__tags"><li>Люди в вашем процессе</li><li>Кадры на нас</li><li>Замена в смену</li></ul>
+          <p class="svc-row__desc">Сотрудники в вашем процессе, кадры и налоги — на нас.</p>
+          <ul class="tags svc-row__tags"><li>Ваш контроль</li><li>Кадры на нас</li><li>Замена в смену</li></ul>
         </div>
-        <div class="svc-row__media framed"><img src="assets/img/service-outstaffing.jpg" alt="Бригада рабочих в спецодежде готова к смене" loading="lazy" decoding="async"></div>
+        <div class="svc-row__media framed"><img src="assets/img/service-outstaffing.jpg" alt="Бригада рабочих в спецодежде" loading="lazy" decoding="async"></div>
         <span class="svc-row__go" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M3 11L11 3M5 3h6v6" fill="none" stroke="currentColor" stroke-width="1.4"/></svg></span>
       </a>
 
       <a class="svc-row" href="personnel.html" data-reveal>
         <span class="svc-row__num">03</span>
         <div class="svc-row__body">
-          <h3 class="svc-row__title">Разовые работы для частных лиц</h3>
-          <p class="svc-row__desc">Переезд, демонтаж, уборка участка, помощь на даче. Минимальный заказ — один человек на четыре часа, без предоплат и сложных договоров.</p>
-          <ul class="tags svc-row__tags"><li>От 4 часов</li><li>1 человек</li><li>Оплата после работы</li></ul>
+          <h3 class="svc-row__title">Частным лицам</h3>
+          <p class="svc-row__desc">Один человек от четырёх часов: переезд, демонтаж, уборка.</p>
+          <ul class="tags svc-row__tags"><li>От 4 часов</li><li>Без предоплат</li><li>Оплата после работы</li></ul>
         </div>
         <div class="svc-row__media framed"><img src="assets/img/service-private.jpg" alt="Мастер с инструментом на объекте" loading="lazy" decoding="async"></div>
         <span class="svc-row__go" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M3 11L11 3M5 3h6v6" fill="none" stroke="currentColor" stroke-width="1.4"/></svg></span>
@@ -280,70 +262,15 @@
   </div>
 </section>
 
-<section class="section section--dark" id="steps">
+<section class="section" id="industries">
   <div class="wrap">
     <div class="sec-head" data-reveal>
       <div class="sec-head__main">
-        <p class="eyebrow"><span class="eyebrow__num">02</span><span class="eyebrow__sep"></span>Как это работает</p>
-        <h2 class="sec-head__title">От заявки до первой смены</h2>
-      </div>
-      <div class="sec-head__aside">
-        <p>Типовой запуск занимает один-два дня. Если люди нужны сегодня, позвоните — проверим резерв и скажем честно, успеваем ли.</p>
-      </div>
-    </div>
-
-    <ol class="steps" data-reveal>
-      <li class="step" style="--d:0ms">
-        <span class="step__num">01</span>
-        <span class="step__time">15 минут</span>
-        <h3 class="step__title">Бриф</h3>
-        <p class="step__text">Уточняем объект, профессии, график, требования по допускам и дату старта.</p>
-      </li>
-      <li class="step" style="--d:120ms">
-        <span class="step__num">02</span>
-        <span class="step__time">2 часа</span>
-        <h3 class="step__title">Смета и КП</h3>
-        <p class="step__text">Считаем ставку, количество людей и резерв. Показываем, из чего складывается цена.</p>
-      </li>
-      <li class="step" style="--d:240ms">
-        <span class="step__num">03</span>
-        <span class="step__time">1 день</span>
-        <h3 class="step__title">Договор</h3>
-        <p class="step__text">Фиксируем объём, ответственность, порядок замен и оплату. Подписываем и согласуем табель.</p>
-      </li>
-      <li class="step" style="--d:360ms">
-        <span class="step__num">04</span>
-        <span class="step__time">от 24 часов</span>
-        <h3 class="step__title">Вывод смены</h3>
-        <p class="step__text">Проводим инструктаж, выдаём пропуска и спецодежду, выводим людей на объект.</p>
-      </li>
-      <li class="step" style="--d:480ms">
-        <span class="step__num">05</span>
-        <span class="step__time">каждый день</span>
-        <h3 class="step__title">Работа и замены</h3>
-        <p class="step__text">Менеджер ведёт табель, контролирует выход и заменяет людей без остановки работ.</p>
-      </li>
-    </ol>
-
-    <div class="steps-foot">
-      <p class="steps-foot__text">Нужна смена на завтра? Позвоните — ответим сразу.</p>
-      <div class="steps-foot__actions">
-        <a class="btn btn--copper" href="prices.html#calc">Рассчитать стоимость</a>
-        <a class="btn btn--outline-light" href="tel:+74012000000">+7 (4012) 00-00-00</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="wrap">
-    <div class="sec-head" data-reveal>
-      <div class="sec-head__main">
-        <p class="eyebrow"><span class="eyebrow__num">03</span><span class="eyebrow__sep"></span>Отрасли</p>
+        <p class="eyebrow"><span class="eyebrow__num">02</span><span class="eyebrow__sep"></span>Отрасли</p>
         <h2 class="sec-head__title">Где мы уже работаем</h2>
       </div>
       <div class="sec-head__aside">
-        <p>Автозаводы, агрохолдинги, стройка, пищепром, склады и частные заказчики. В каждой отрасли — свои допуски и свой ритм смен.</p>
+        <p>От автозаводов до частных заказов — в каждой отрасли свои допуски и ритм смен.</p>
       </div>
     </div>
     <div class="ind-grid">
@@ -408,7 +335,6 @@
   </span>
 </a>
     </div>
-    <p class="section__note" data-reveal>Не нашли свою отрасль? Позвоните — обсудим задачи и скажем, каких людей сможем вывести.</p>
   </div>
 </section>
 
@@ -416,22 +342,21 @@
   <div class="wrap">
     <div class="sec-head" data-reveal>
       <div class="sec-head__main">
-        <p class="eyebrow"><span class="eyebrow__num">04</span><span class="eyebrow__sep"></span>Персонал</p>
+        <p class="eyebrow"><span class="eyebrow__num">03</span><span class="eyebrow__sep"></span>Персонал</p>
         <h2 class="sec-head__title">Кто выходит на объекты</h2>
       </div>
       <div class="sec-head__aside">
-        <p>Ставки — ориентир для Калининграда и области. Итог зависит от объекта, графика и требований к допускам.</p>
-        <p><a class="link-arrow" href="personnel.html">Все профессии и ставки</a></p>
+        <p>Ставки — ориентир для области. Полный список — <a href="personnel.html">персонал и ставки</a>.</p>
       </div>
     </div>
     <div class="prof-grid">
 
-<article class="prof-card" data-item data-cat="sklad" data-search="грузчик разгрузка фур, перемещение паллет, работа на докшелтере, помощь на отгрузке. физическая форма и допуск — обязательны. погрузка и разгрузка паллеты 8 и 12 часов">
+<article class="prof-card" data-item data-cat="sklad" data-search="грузчик разгрузка фур, перемещение паллет, работа на докшелтере. погрузка и разгрузка паллеты 8 и 12 часов">
   <div class="prof-card__head">
     <h3 class="prof-card__name">Грузчик</h3>
     <p class="prof-card__rate"><span>от</span> 400&nbsp;₽<small>/час</small></p>
   </div>
-  <p class="prof-card__desc">Разгрузка фур, перемещение паллет, работа на докшелтере, помощь на отгрузке. Физическая форма и допуск — обязательны.</p>
+  <p class="prof-card__desc">Разгрузка фур, перемещение паллет, работа на докшелтере.</p>
   <ul class="tags" aria-label="Особенности"><li>Погрузка и разгрузка</li><li>Паллеты</li><li>8 и 12 часов</li></ul>
   <div class="prof-card__foot">
     <span class="prof-card__min">от 4 часов</span>
@@ -439,12 +364,12 @@
   </div>
 </article>
 
-<article class="prof-card" data-item data-cat="sklad" data-search="комплектовщик заказов сборка заказов по листу и через терминал сбора данных, контроль количества и маркировки, передача на упаковку. адресное хранение тсд сборка заказов">
+<article class="prof-card" data-item data-cat="sklad" data-search="комплектовщик заказов сборка заказов по тсд, контроль количества и маркировки. адресное хранение тсд сборка заказов">
   <div class="prof-card__head">
     <h3 class="prof-card__name">Комплектовщик заказов</h3>
     <p class="prof-card__rate"><span>от</span> 430&nbsp;₽<small>/час</small></p>
   </div>
-  <p class="prof-card__desc">Сборка заказов по листу и через терминал сбора данных, контроль количества и маркировки, передача на упаковку.</p>
+  <p class="prof-card__desc">Сборка заказов по ТСД, контроль количества и маркировки.</p>
   <ul class="tags" aria-label="Особенности"><li>Адресное хранение</li><li>ТСД</li><li>Сборка заказов</li></ul>
   <div class="prof-card__foot">
     <span class="prof-card__min">от смены</span>
@@ -452,12 +377,12 @@
   </div>
 </article>
 
-<article class="prof-card" data-item data-cat="sklad" data-search="водитель погрузчика работа на вилочном погрузчике и штабелёре, приёмка и размещение паллет, отгрузка по заданиям склада. права на погрузчик штабелёр склад">
+<article class="prof-card" data-item data-cat="sklad" data-search="водитель погрузчика вилочный погрузчик и штабелёр: приёмка и размещение паллет. права на погрузчик штабелёр склад">
   <div class="prof-card__head">
     <h3 class="prof-card__name">Водитель погрузчика</h3>
     <p class="prof-card__rate"><span>от</span> 550&nbsp;₽<small>/час</small></p>
   </div>
-  <p class="prof-card__desc">Работа на вилочном погрузчике и штабелёре, приёмка и размещение паллет, отгрузка по заданиям склада.</p>
+  <p class="prof-card__desc">Вилочный погрузчик и штабелёр: приёмка и размещение паллет.</p>
   <ul class="tags" aria-label="Особенности"><li>Права на погрузчик</li><li>Штабелёр</li><li>Склад</li></ul>
   <div class="prof-card__foot">
     <span class="prof-card__min">от смены</span>
@@ -465,12 +390,12 @@
   </div>
 </article>
 
-<article class="prof-card" data-item data-cat="sklad" data-search="кладовщик приёмка и отпуск товара, сверка документов, ведение учёта, инвентаризация, работа с накладными. приёмка учёт 1с">
+<article class="prof-card" data-item data-cat="sklad" data-search="кладовщик приёмка и отпуск товара, учёт, инвентаризация. приёмка учёт 1с">
   <div class="prof-card__head">
     <h3 class="prof-card__name">Кладовщик</h3>
     <p class="prof-card__rate"><span>от</span> 480&nbsp;₽<small>/час</small></p>
   </div>
-  <p class="prof-card__desc">Приёмка и отпуск товара, сверка документов, ведение учёта, инвентаризация, работа с накладными.</p>
+  <p class="prof-card__desc">Приёмка и отпуск товара, учёт, инвентаризация.</p>
   <ul class="tags" aria-label="Особенности"><li>Приёмка</li><li>Учёт</li><li>1С</li></ul>
   <div class="prof-card__foot">
     <span class="prof-card__min">от смены</span>
@@ -478,12 +403,12 @@
   </div>
 </article>
 
-<article class="prof-card" data-item data-cat="sklad" data-search="грузчик-экспедитор сопровождение груза, погрузка и выгрузка по маршруту, оформление приёма-передачи на объектах. доставка сопровождение груза документы">
+<article class="prof-card" data-item data-cat="sklad" data-search="грузчик-экспедитор сопровождение груза и оформление приёма-передачи. доставка сопровождение груза документы">
   <div class="prof-card__head">
     <h3 class="prof-card__name">Грузчик-экспедитор</h3>
     <p class="prof-card__rate"><span>от</span> 450&nbsp;₽<small>/час</small></p>
   </div>
-  <p class="prof-card__desc">Сопровождение груза, погрузка и выгрузка по маршруту, оформление приёма-передачи на объектах.</p>
+  <p class="prof-card__desc">Сопровождение груза и оформление приёма-передачи.</p>
   <ul class="tags" aria-label="Особенности"><li>Доставка</li><li>Сопровождение груза</li><li>Документы</li></ul>
   <div class="prof-card__foot">
     <span class="prof-card__min">от смены</span>
@@ -491,12 +416,12 @@
   </div>
 </article>
 
-<article class="prof-card" data-item data-cat="stroyka" data-search="разнорабочий подсобные работы на объекте, перемещение материалов, демонтаж, уборка территории, помощь бригаде. демонтаж подсобные работы стройплощадка">
+<article class="prof-card" data-item data-cat="stroyka" data-search="разнорабочий подсобные и демонтажные работы, помощь бригаде. демонтаж подсобные работы стройплощадка">
   <div class="prof-card__head">
     <h3 class="prof-card__name">Разнорабочий</h3>
     <p class="prof-card__rate"><span>от</span> 420&nbsp;₽<small>/час</small></p>
   </div>
-  <p class="prof-card__desc">Подсобные работы на объекте, перемещение материалов, демонтаж, уборка территории, помощь бригаде.</p>
+  <p class="prof-card__desc">Подсобные и демонтажные работы, помощь бригаде.</p>
   <ul class="tags" aria-label="Особенности"><li>Демонтаж</li><li>Подсобные работы</li><li>Стройплощадка</li></ul>
   <div class="prof-card__foot">
     <span class="prof-card__min">от 4 часов</span>
@@ -510,61 +435,105 @@
 <section class="section">
   <div class="wrap split">
     <div class="split__aside" data-reveal>
-      <p class="eyebrow"><span class="eyebrow__num">05</span><span class="eyebrow__sep"></span>Гарантии</p>
-      <h2 class="split__title">Что вы получаете по договору</h2>
-      <p class="split__note">Не обещания на словах, а пункты, которые можно проверить в документе и в табеле.</p>
-      <p style="margin-top: 24px"><a class="link-arrow" href="about.html">О компании и документах</a></p>
+      <p class="eyebrow"><span class="eyebrow__num">04</span><span class="eyebrow__sep"></span>Гарантии</p>
+      <h2 class="split__title">Зафиксировано в договоре</h2>
+      <p class="split__note">Пункты, которые можно проверить в документе и в табеле.</p>
+      <p style="margin-top: 24px"><a class="link-arrow" href="about.html">О компании</a></p>
     </div>
     <div class="value-list" data-reveal>
       <div class="value-item">
         <span class="value-item__num">01</span>
         <div>
-          <h3 class="value-item__title">Люди с проверенными документами</h3>
-          <p class="value-item__text">Паспорт, СНИЛС, ИНН, трудовые сведения, допуски и медкнижки проверяем до выхода на объект. Не проводим людей «на доверии».</p>
+          <h3 class="value-item__title">Проверенные документы</h3>
+          <p class="value-item__text">Допуски, удостоверения и медкнижки — до выхода на объект.</p>
         </div>
       </div>
       <div class="value-item">
         <span class="value-item__num">02</span>
         <div>
           <h3 class="value-item__title">Замена в течение смены</h3>
-          <p class="value-item__text">Под каждый объект держим резерв. Если человек заболел или не вышел — поднимаем замену и предупреждаем вас, а не ставим перед фактом.</p>
+          <p class="value-item__text">Резерв держим под каждый объект.</p>
         </div>
       </div>
       <div class="value-item">
         <span class="value-item__num">03</span>
         <div>
-          <h3 class="value-item__title">Менеджер, который на связи</h3>
-          <p class="value-item__text">Один человек отвечает за выход, табель и дисциплину. Ему можно позвонить в смену, а не искать директора по телефону.</p>
+          <h3 class="value-item__title">Менеджер на связи</h3>
+          <p class="value-item__text">Выход, табель и дисциплина — один человек отвечает.</p>
         </div>
       </div>
       <div class="value-item">
         <span class="value-item__num">04</span>
         <div>
           <h3 class="value-item__title">Документы без хвостов</h3>
-          <p class="value-item__text">Акты, табели и счета приходят вовремя. Налоги и взносы — наши. Ваша бухгалтерия получает закрывающие документы по графику.</p>
+          <p class="value-item__text">Акты и счета приходят по графику.</p>
         </div>
       </div>
       <div class="value-item">
         <span class="value-item__num">05</span>
         <div>
-          <h3 class="value-item__title">Оплата за фактические смены</h3>
-          <p class="value-item__text">Платите за людей, которые реально вышли. Никаких наценок за «срочный подбор» и скрытых строк в счёте.</p>
+          <h3 class="value-item__title">Оплата за факт</h3>
+          <p class="value-item__text">Платите только за реально вышедшие смены.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section section--dark">
+<div class="wave-seam" style="--from:#F3EFE6; --to:#0B1B2D" aria-hidden="true">
+  <div class="wave-layer wave-layer--accent"><svg viewBox="0 0 1440 110" preserveAspectRatio="none"><path d="M0 34 Q240 -2 480 34 T720 34 T960 34 T1200 34 T1440 34 L1440 110 L0 110 Z"/></svg></div>
+  <div class="wave-layer wave-layer--main"><svg viewBox="0 0 1440 110" preserveAspectRatio="none"><path d="M0 34 Q240 -2 480 34 T720 34 T960 34 T1200 34 T1440 34 L1440 110 L0 110 Z"/></svg></div>
+</div>
+
+<section class="section section--dark has-ghost" id="steps">
+  <span class="ghost ghost--dark" data-float="0.05" aria-hidden="true">СМЕНА</span>
   <div class="wrap">
     <div class="sec-head" data-reveal>
       <div class="sec-head__main">
-        <p class="eyebrow"><span class="eyebrow__num">06</span><span class="eyebrow__sep"></span>Кейсы</p>
-        <h2 class="sec-head__title">Смены, которые не встали</h2>
+        <p class="eyebrow"><span class="eyebrow__num">05</span><span class="eyebrow__sep"></span>Запуск</p>
+        <h2 class="sec-head__title">От заявки до первой смены</h2>
       </div>
       <div class="sec-head__aside">
-        <p><a class="link-arrow" href="reviews.html">Все кейсы и отзывы</a></p>
+        <p>Нужны люди сегодня — позвоните, проверим резерв и скажем честно.</p>
       </div>
+    </div>
+
+    <ol class="steps" data-reveal>
+      <li class="step" style="--d:0ms">
+        <span class="step__num">01</span>
+        <span class="step__time">15 минут</span>
+        <h3 class="step__title">Бриф</h3>
+        <p class="step__text">Объект, профессии, график, допуски.</p>
+      </li>
+      <li class="step" style="--d:120ms">
+        <span class="step__num">02</span>
+        <span class="step__time">2 часа</span>
+        <h3 class="step__title">Смета</h3>
+        <p class="step__text">Ставка, люди, резерв — видно всё.</p>
+      </li>
+      <li class="step" style="--d:240ms">
+        <span class="step__num">03</span>
+        <span class="step__time">1 день</span>
+        <h3 class="step__title">Договор</h3>
+        <p class="step__text">Объём, замены, оплата, табель.</p>
+      </li>
+      <li class="step" style="--d:360ms">
+        <span class="step__num">04</span>
+        <span class="step__time">от 24 часов</span>
+        <h3 class="step__title">Вывод смены</h3>
+        <p class="step__text">Инструктаж, пропуска, спецодежда.</p>
+      </li>
+      <li class="step" style="--d:480ms">
+        <span class="step__num">05</span>
+        <span class="step__time">ежедневно</span>
+        <h3 class="step__title">Замены</h3>
+        <p class="step__text">Менеджер ведёт выход каждый день.</p>
+      </li>
+    </ol>
+
+    <div class="sub-head" data-reveal>
+      <p class="eyebrow"><span class="eyebrow__num">06</span><span class="eyebrow__sep"></span>Кейсы</p>
+      <h2 class="sec-head__title">Смены, которые не встали</h2>
     </div>
     <div class="case-grid">
 
@@ -607,8 +576,14 @@
   </div>
 </article>
     </div>
+    <p class="section__note"><a class="link-arrow" href="reviews.html">Все кейсы и отзывы</a></p>
   </div>
 </section>
+
+<div class="wave-seam" style="--from:#0B1B2D; --to:#F3EFE6" aria-hidden="true">
+  <div class="wave-layer wave-layer--accent"><svg viewBox="0 0 1440 110" preserveAspectRatio="none"><path d="M0 34 Q240 -2 480 34 T720 34 T960 34 T1200 34 T1440 34 L1440 110 L0 110 Z"/></svg></div>
+  <div class="wave-layer wave-layer--main"><svg viewBox="0 0 1440 110" preserveAspectRatio="none"><path d="M0 34 Q240 -2 480 34 T720 34 T960 34 T1200 34 T1440 34 L1440 110 L0 110 Z"/></svg></div>
+</div>
 
 <section class="section">
   <div class="wrap">
@@ -675,7 +650,7 @@
 </article>
       </div>
     </div>
-    <p class="section__note">Имена и названия компаний не раскрываем — это условие договоров с клиентами. Подлинность отзывов подтверждаем на встрече.</p>
+    <p class="section__note">Имена и компании не раскрываем — условие договоров. Подлинность подтверждаем на встрече.</p>
   </div>
 </section>
 
@@ -687,7 +662,7 @@
         <h2 class="sec-head__title">Соберите смену за минуту</h2>
       </div>
       <div class="sec-head__aside">
-        <p>Цифры — ориентир без НДС. Точную смету пришлём после брифа: учтём объект, график, допуски и резерв.</p>
+        <p>Цифры — ориентир. Точную смету пришлём после брифа.</p>
       </div>
     </div>
 
@@ -736,7 +711,7 @@
               <option value="staff" data-factor="1.12">Аутстаффинг — люди в вашем процессе</option>
             </select>
           </label>
-          <p class="calc__hint">Минимальный заказ — один человек на четыре часа. Ставка фиксируется в договоре и не меняется в середине смены.</p>
+          <p class="calc__hint">Минимальный заказ — один человек на четыре часа. Ставка фиксируется в договоре.</p>
         </div>
       </div>
       <div class="calc__result">
@@ -750,9 +725,9 @@
           </div>
         </div>
         <div>
-          <p class="calc__note">В ставку входят оформление, налоги, работа менеджера и резерв на замену. Спецодежда и СИЗ — по договорённости.</p>
+          <p class="calc__note">В ставку входят оформление, налоги, менеджер и резерв на замену.</p>
           <button class="btn btn--copper btn--wide" type="button" data-calc-order style="margin-top: 16px">Получить смету</button>
-          <p style="margin: 14px 0 0; font-size: 12px; color: rgba(243,239,230,.7)"><a href="prices.html#calc" style="color: var(--copper-3)">Полный калькулятор с количеством смен</a></p>
+          <p style="margin: 14px 0 0; font-size: 12px; color: rgba(243,239,230,.7)"><a href="prices.html#calc" style="color: var(--copper-3)">Полный калькулятор</a></p>
         </div>
       </div>
     </div>
@@ -815,7 +790,7 @@
   </div>
 </section>
 
-<section class="section section--tight">
+<section class="section section--paper2">
   <div class="wrap">
     <div class="sec-head" data-reveal>
       <div class="sec-head__main">
@@ -823,8 +798,7 @@
         <h2 class="sec-head__title">Как считать и выбирать</h2>
       </div>
       <div class="sec-head__aside">
-        <p>Практические статьи без маркетингового тумана: что спрашивать, как считать, где риски.</p>
-        <p><a class="link-arrow" href="blog.html">Все статьи</a></p>
+        <p>Практика без маркетингового тумана. <a class="link-arrow" href="blog.html">Все статьи</a></p>
       </div>
     </div>
     <div class="post-grid">
@@ -874,11 +848,16 @@
   </div>
 </section>
 
+<div class="wave-seam" style="--from:#F3EFE6; --to:#0B1B2D" aria-hidden="true">
+  <div class="wave-layer wave-layer--accent"><svg viewBox="0 0 1440 110" preserveAspectRatio="none"><path d="M0 34 Q240 -2 480 34 T720 34 T960 34 T1200 34 T1440 34 L1440 110 L0 110 Z"/></svg></div>
+  <div class="wave-layer wave-layer--main"><svg viewBox="0 0 1440 110" preserveAspectRatio="none"><path d="M0 34 Q240 -2 480 34 T720 34 T960 34 T1200 34 T1440 34 L1440 110 L0 110 Z"/></svg></div>
+</div>
+
 <section class="cta-band">
   <div class="wrap cta-band__in">
     <div>
       <h2 class="cta-band__title">Смена нужна завтра? Начнём сегодня</h2>
-      <p class="cta-band__text">Позвоните или оставьте заявку. Уточним задачу за 15 минут и скажем, каких людей сможем вывести и в какие сроки.</p>
+      <p class="cta-band__text">Позвоните или оставьте заявку — уточним задачу за 15 минут и скажем, кого сможем вывести.</p>
     </div>
     <div class="cta-band__actions">
       <a class="cta-band__phone" href="tel:+74012000000">+7 (4012) 00-00-00</a>
@@ -896,14 +875,6 @@
     <text x="100" y="112" text-anchor="middle" fill="currentColor" font-family="Oranienbaum, serif" font-size="64">РР</text>
   </svg>
 </section>
-
-
-
-
-
-
-
-
 
 </main>
 <footer class="footer">
@@ -1071,11 +1042,13 @@
 </nav>
 
 <script src="assets/js/main.js" defer></script>
+<script src="assets/js/flow.js" defer></script>
 <script src="assets/js/calculator.js" defer></script>
 <script src="assets/js/hero.js" defer></script>
 <script src="assets/js/motion.js" defer></script>
 <script src="assets/js/ui.js" defer></script>
 </body>
 </html>
+
 
 
