@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://real1zator.github.io/rusresurs-site/sitemap.xml
