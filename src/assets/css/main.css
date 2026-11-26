@@ -2953,3 +2953,89 @@ body { position: relative; }
   .stat__label { margin-top: 7px; font-size: 11.5px; line-height: 1.35; }
 }
 
+
+/* ==========================================================================
+   МИКРО-ВЗАИМОДЕЙСТВИЯ
+   ========================================================================== */
+
+/* плавная смена страниц (Chrome/Edge, Safari 18+) */
+@view-transition { navigation: auto; }
+::view-transition-old(root) {
+  animation: vtOut 0.26s ease both;
+}
+::view-transition-new(root) {
+  animation: vtIn 0.34s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+@keyframes vtOut { to { opacity: 0; transform: translateY(-6px); } }
+@keyframes vtIn { from { opacity: 0; transform: translateY(8px); } }
+
+/* «пилюля» активной вкладки */
+@media (max-width: 1024px) {
+  .tabbar { isolation: isolate; }
+  .tabbar__pill {
+    position: absolute;
+    left: 6px;
+    top: 6px;
+    height: 52px;
+    border-radius: 18px;
+    background: radial-gradient(120% 120% at 50% 0%, rgba(200, 122, 67, 0.4), rgba(200, 122, 67, 0.08));
+    box-shadow: inset 0 0 0 1px rgba(217, 154, 108, 0.55), 0 8px 22px -12px rgba(200, 122, 67, 0.9);
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0;
+    will-change: transform, width;
+  }
+  .tabbar__item.is-press { transform: scale(0.93); }
+  .tabbar__item[aria-current="page"]:not(.tabbar__item--cta) { background: none; box-shadow: none; }
+  .tabbar__item[aria-current="page"]:not(.tabbar__item--cta)::after { display: none; }
+}
+
+/* проявление фотографий */
+.img-reveal {
+  opacity: 0;
+  transform: translateY(18px) scale(1.04);
+  transition: opacity 0.8s var(--ease), transform 0.9s var(--ease), filter 0.7s var(--ease);
+}
+.img-reveal.is-shown { opacity: 1; transform: translateY(0) scale(1.03); }
+
+/* подъём карточек при нажатии */
+.prof-card:active, .vac-card:active, .scenario:active, .mini-card:active { transform: scale(0.985); }
+
+/* плавное подчёркивание ссылок в подвале */
+.footer__col a { position: relative; }
+.footer__col a::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: -2px;
+  width: 0; height: 1px;
+  background: var(--copper-3);
+  transition: width 0.3s var(--ease);
+}
+.footer__col a:hover::after { width: 100%; }
+
+
+/* --- мягче свечение центральной кнопки --- */
+@media (max-width: 1024px) {
+  .tabbar__cta-inner {
+    animation: none;
+    box-shadow: 0 10px 22px -16px rgba(156, 79, 36, 0.95), inset 0 1px 0 rgba(255, 255, 255, 0.22);
+  }
+  .tabbar__cta-inner::after {
+    content: "";
+    position: absolute;
+    inset: -3px;
+    border-radius: 24px;
+    border: 1px solid rgba(232, 179, 127, 0.35);
+    animation: ctaRing 3.4s ease-in-out infinite;
+    pointer-events: none;
+  }
+  .tabbar__item--cta { position: relative; }
+  @keyframes ctaRing {
+    0%, 100% { opacity: 0.25; transform: scale(1); }
+    50% { opacity: 0.75; transform: scale(1.06); }
+  }
+}
+
+/* обложка статьи не должна «вылезать» из-за параллакса */
+.article-cover { overflow: hidden; }
+.article-cover img { transform-origin: 50% 50%; }
