@@ -2884,7 +2884,7 @@ body { position: relative; }
 .media-split__media img,
 .forklift,
 .case-card__media img {
-  filter: grayscale(0.72) sepia(0.28) saturate(1.45) contrast(1.03) brightness(0.97);
+  filter: grayscale(0.28) sepia(0.14) saturate(1.12) contrast(1.06) brightness(1.01);
   transition: filter 0.7s var(--ease), transform 0.9s var(--ease);
 }
 .svc-row:hover .svc-row__media img,
@@ -2892,7 +2892,7 @@ body { position: relative; }
 .post-card:hover .post-card__media img,
 .case-card:hover .case-card__media img,
 .media-split__media:hover img {
-  filter: grayscale(0.12) sepia(0.06) saturate(1.1) contrast(1.02) brightness(1.02);
+  filter: grayscale(0) sepia(0.03) saturate(1.05) contrast(1.04) brightness(1.03);
 }
 
 /* лёгкий медный «отсвет» поверх фото */
@@ -2904,7 +2904,7 @@ body { position: relative; }
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  background: linear-gradient(160deg, rgba(200, 122, 67, 0.22), rgba(11, 27, 45, 0.05) 46%, rgba(11, 27, 45, 0.22));
+  background: linear-gradient(160deg, rgba(200, 122, 67, 0.14), rgba(11, 27, 45, 0) 48%, rgba(11, 27, 45, 0.14));
   mix-blend-mode: multiply;
   pointer-events: none;
   transition: opacity 0.6s var(--ease);
@@ -2918,4 +2918,38 @@ body { position: relative; }
 .svc-row__media, .post-card__media, .case-card__media, .media-split__media { position: relative; }
 .media-split__media > img { position: relative; z-index: 0; }
 .media-split__media::after { z-index: 2; }
+
+
+/* --- первый экран не должен уезжать под нижнюю панель --- */
+@media (max-width: 1024px) {
+  .page-home .hero {
+    padding-bottom: calc(84px + env(safe-area-inset-bottom, 0px));
+    min-height: 100svh;
+  }
+  .page-home .hero__stats { padding-bottom: 6px; }
+  .page-home .hero__inner { padding-bottom: clamp(10px, 1.6vh, 22px); }
+}
+@media (max-width: 760px) {
+  .page-home .hero {
+    min-height: 0;
+    padding-bottom: calc(96px + env(safe-area-inset-bottom, 0px));
+    justify-content: flex-start;
+  }
+  .hero__stat { padding-bottom: 12px; }
+}
+
+
+/* --- компактный первый экран на телефоне: всё влезает над панелью --- */
+@media (max-width: 760px) {
+  .hero { padding-top: calc(var(--header-h) + 18px); }
+  .hero__kicker { margin-bottom: 16px; font-size: 12px; }
+  .hero__title { font-size: clamp(31px, 9.2vw, 46px); line-height: 1.02; }
+  .hero__lead { margin-top: 14px; font-size: 15px; line-height: 1.5; }
+  .hero__actions { margin-top: 20px; gap: 12px; }
+  .hero__inner { padding-bottom: 4px; }
+  .hero__stat { padding: 14px 16px 14px 0; }
+  .hero__stat:nth-child(even) { padding-left: 14px; }
+  .stat__num { font-size: 27px; }
+  .stat__label { margin-top: 7px; font-size: 11.5px; line-height: 1.35; }
+}
 
