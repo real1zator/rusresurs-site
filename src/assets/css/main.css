@@ -935,7 +935,16 @@ body.nav-open { overflow: hidden; }
   transition: opacity 0.4s;
 }
 .ind-tile:hover img { transform: scale(1.08); filter: saturate(0.95) brightness(0.85); }
-.ind-tile__body { display: grid; gap: 8px; padding: 26px; }
+.ind-tile__body {
+  width: 100%;
+  min-width: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 8px;
+  padding: clamp(16px, 4vw, 26px);
+  overflow-wrap: anywhere;
+  hyphens: auto;
+}
 .ind-tile__kicker { font-size: 12px; color: rgba(243, 239, 230, 0.62); }
 .ind-tile__title {
   font-family: var(--font-display);
@@ -952,7 +961,7 @@ body.nav-open { overflow: hidden; }
   transform: translateY(6px);
   transition: opacity 0.35s var(--ease), transform 0.35s var(--ease);
 }
-.ind-tile:hover .ind-tile__more { opacity: 1; transform: none; }
+.ind-tile:is(:hover, :focus-visible) .ind-tile__more { opacity: 1; transform: none; }
 
 /* ---------- profession cards ---------- */
 
@@ -1759,7 +1768,6 @@ select.field__input { appearance: none; background-image: url("data:image/svg+xm
 
   .ind-tile { grid-column: span 6; }
   .ind-tile--wide { grid-column: span 6; min-height: 300px; }
-  .ind-tile:nth-child(5), .ind-tile:nth-child(6) { grid-column: span 6; }
 
   .prof-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .case-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -1822,9 +1830,14 @@ select.field__input { appearance: none; background-image: url("data:image/svg+xm
   .step__time { margin-top: 2px; }
   .step__title { margin-top: 8px; }
 
-  .ind-grid { grid-template-columns: 1fr; }
-  .ind-tile, .ind-tile--wide { grid-column: auto; min-height: 240px; }
-  .ind-tile__shade { background: linear-gradient(0deg, rgba(6, 18, 31, 0.92), rgba(6, 18, 31, 0.3)); }
+  .ind-grid { grid-template-columns: minmax(0, 1fr); }
+  .ind-tile, .ind-tile--wide { grid-column: 1 / -1; min-height: 216px; }
+  .ind-tile__shade {
+    background: linear-gradient(0deg, rgba(6, 18, 31, 0.98), rgba(6, 18, 31, 0.78) 44%, rgba(6, 18, 31, 0.18));
+  }
+  .ind-tile__kicker { font-size: 13px; color: #e6e1d8; }
+  .ind-tile__title, .ind-tile--wide .ind-tile__title { font-size: clamp(23px, 6vw, 30px); max-width: none; }
+  .ind-tile__more { opacity: 1; transform: none; }
 
   .prof-grid { grid-template-columns: 1fr; }
   .case-grid { grid-template-columns: 1fr; }
