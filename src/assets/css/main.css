@@ -3501,30 +3501,39 @@ body { position: relative; }
 
 
 
-/* Mobile home: a full-bleed warehouse photograph behind the introduction. */
+/* Mobile home: warehouse portrait and editorial text panel. */
 @media (max-width: 760px) {
   .page-home .hero { padding: var(--header-h) 0 24px; }
   .page-home .hero__grid {
-    isolation: isolate; position: relative; overflow: hidden; width: 100%; max-width: none;
-    min-height: clamp(450px, 68svh, 600px); padding: 0; display: grid; align-items: end;
+    display: grid; grid-template-columns: minmax(0, 1fr); gap: 0;
+    width: 100%; max-width: none; min-height: 0; padding: 0; background: #102336;
   }
   .page-home .porthole {
-    position: absolute; inset: 0; z-index: -1; width: 100%; height: 100%;
-    max-width: none; margin: 0; aspect-ratio: auto; border-radius: 0;
+    grid-row: 1; position: relative; inset: auto; width: 100%; max-width: none;
+    height: clamp(130px, 22svh, 210px); margin: 0; aspect-ratio: auto; border-radius: 0;
   }
   .page-home .porthole__frame { border-radius: 0; box-shadow: none; }
-  .page-home .porthole img { opacity: 1; object-position: 56% 30%; filter: none; }
-  .page-home .porthole::after {
-    content: ""; position: absolute; inset: 0; border: 0; border-radius: 0; transform: none;
-    background: linear-gradient(180deg, transparent 5%, rgba(9,24,40,.24) 25%, rgba(9,24,40,.92) 57%, #0b1b2e 100%);
+  .page-home .porthole img { opacity: 1; object-position: 50% 32%; filter: none; }
+  .page-home .porthole::after, .page-home .porthole :is(canvas,.porthole__ring,.porthole__tag,.porthole__chip),
+  .page-home .hero__actions a[href^="tel:"], .page-home .hero__kicker > :not(:last-child) { display: none; }
+  .page-home .hero__copy {
+    grid-row: 2; width: 100%; max-width: none; box-sizing: border-box;
+    background: #102336; color: #fff8ed; padding: 20px clamp(18px, 5vw, 38px) 24px;
   }
-  .page-home .porthole :is(canvas,.porthole__ring,.porthole__tag,.porthole__chip),
-  .page-home .hero__actions a[href^="tel:"],
-  .page-home .hero__kicker > :not(:last-child), .page-home .hero__kicker::before { display: none; }
-  .page-home .hero__copy { padding: 152px 20px 24px; }
-  .page-home .hero__kicker { display: block; margin: 0 0 12px; color: #ffe0bd; font-size: 12px; }
-  .page-home .hero__title { font-size: clamp(30px, 8.6vw, 44px); line-height: 1.06; }
-  .page-home .hero__lead { margin-top: 14px; color: #f0f1ef; font-size: 15px; line-height: 1.45; }
-  .page-home .hero__actions { margin-top: 20px; }
-  .page-home .hero__actions .btn--copper { width: 100%; min-height: 48px; }
+  .page-home .hero__kicker {
+    display: flex; flex-direction: row; align-items: center; gap: 9px;
+    margin: 0 0 12px; color: #f4c79e; font-size: 12px; line-height: 1.4;
+  }
+  .page-home .hero__kicker::before {
+    content: ""; display: block; width: 24px; height: 1px; border-radius: 0;
+    background: currentColor; animation: none; box-shadow: none;
+  }
+  .page-home .hero__title { margin: 0; color: #fff8ed; font-size: clamp(30px, 8.5vw, 46px); line-height: 1.08; }
+  .page-home .h-line > span { animation: none; transform: none; }
+  .page-home .h-line:last-child { color: #f4c79e; }
+  .page-home .hero__lead { margin: 14px 0 0; color: #e0e7ed; font-size: 15px; line-height: 1.48; }
+  .page-home .hero__actions { margin-top: 18px; }
+  .page-home .hero__actions .btn--copper {
+    width: 100%; min-height: 48px; color: #172232; background: #f2c19a; border-color: #f2c19a; box-shadow: none;
+  }
 }
